@@ -15,7 +15,7 @@ git clone https://github.com/Wallayy/StateGenUI.git
 cd StateGenUI
 
 # Install dependencies
-pip install -e .
+pip install -r requirements.txt
 
 # Run the app (opens in native window)
 python launcher.py
