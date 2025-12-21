@@ -5,14 +5,14 @@ Visual workflow builder for XInjector state machine JSON files. Create DAG-based
 ## Installation
 
 ### Option 1: Download Executable (Easiest)
-Download `StateGenerator.exe` from Releases. Double-click to run - no installation needed.
+Download `StateGenerator.exe` from Releases.
 
 ### Option 2: Run from Source
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/StateGenerator_app.git
-cd StateGenerator_app
+git clone https://github.com/Wallayy/StateGenUI.git
+cd StateGenUI
 
 # Install dependencies
 pip install -e .
@@ -39,7 +39,7 @@ python build.py
 ## Project Structure
 
 ```
-StateGenerator_app/
+StateGenUI/
 ├── launcher.py            # Desktop app launcher (PyWebView)
 ├── app/                   # Web application
 │   ├── server.py          # HTTP server
@@ -67,5 +67,5 @@ StateGenerator_app/
 ## Requirements
 
 - Python 3.9+ (for running from source)
-- Windows 10/11 (for executable)
-- WebView2 Runtime (usually pre-installed on Windows 10+)
+- Windows 10/11 (for exe) 
+- WebView2 Runtime (installed on Windows 10+)
