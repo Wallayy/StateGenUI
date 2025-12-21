@@ -1,0 +1,2680 @@
+{
+  "items": {
+    "Cavalry Lance": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "enemies": [
+        "Beholder",
+        "Djinn",
+        "Flying Brain",
+        "Medusa",
+        "Nameless Gladiator",
+        "Rock Construct",
+        "Slime God",
+        "Steel Construct",
+        "Unsung Jester",
+        "Vagabond Satyr",
+        "Wood Construct",
+        "Dragon\u0092s Treasure",
+        "Insurgent Rebel Commander",
+        "Sword in the Stone?"
+      ],
+      "category": "white_bag"
+    },
+    "Dirk of Cronus": {
+      "biomes": [
+        "abandoned_city",
+        "sprite_forest"
+      ],
+      "enemies": [
+        "Cube God",
+        "Astral Rift"
+      ],
+      "category": "white_bag"
+    },
+    "Hama Yumi": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "enemies": [
+        "Goblin Patriarch",
+        "Jade and Garnet Statues",
+        "Legion General"
+      ],
+      "category": "white_bag"
+    },
+    "Helm of the Juggernaut": {
+      "biomes": [
+        "abandoned_city",
+        "haunted_hallows",
+        "shipwreck_cove"
+      ],
+      "enemies": [
+        "Grand Sphinx",
+        "Sigma Werewolf",
+        "Crab Sovereign"
+      ],
+      "category": "white_bag"
+    },
+    "Kageboshi": {
+      "biomes": [
+        "abandoned_city",
+        "haunted_hallows"
+      ],
+      "enemies": [
+        "Jade and Garnet Statues",
+        "Skull Knight"
+      ],
+      "category": "white_bag"
+    },
+    "Tablet of the King\u0092s Avatar": {
+      "biomes": [
+        "abandoned_city",
+        "carboniferous",
+        "sanguine_forest"
+      ],
+      "enemies": [
+        "Maze Minotaur",
+        "Flying Behemoth",
+        "Avatar of the Forgotten King"
+      ],
+      "category": "white_bag"
+    },
+    "Ray Katana": {
+      "biomes": [
+        "abandoned_city",
+        "sprite_forest"
+      ],
+      "enemies": [
+        "Rock Dragon",
+        "Daughter of Limon"
+      ],
+      "category": "white_bag"
+    },
+    "Adventurer\u0092s Scarf": {
+      "biomes": [
+        "beach"
+      ],
+      "enemies": [
+        "Beached Buccaneer"
+      ],
+      "category": "white_bag"
+    },
+    "Evolutionary Records": {
+      "biomes": [
+        "carboniferous"
+      ],
+      "enemies": [
+        "Animate Sigillaria",
+        "Colossal Mantis",
+        "Grand Dragonfly",
+        "Hunter Dragonfly",
+        "Man-Eating Flytrap",
+        "Scutosaurus",
+        "Spitting Arachnid",
+        "Sting Spider",
+        "Critter Brood"
+      ],
+      "category": "white_bag"
+    },
+    "Crystallised Fang\u0092s Venom": {
+      "biomes": [
+        "carboniferous",
+        "deep_sea_abyss",
+        "runic_tundra"
+      ],
+      "enemies": [
+        "Ancient Kaiju",
+        "Crystal Worm Father",
+        "Adult Baneserpent",
+        "Sentient Monolith"
+      ],
+      "category": "white_bag"
+    },
+    "Token of Happiness": {
+      "biomes": [
+        "carboniferous",
+        "floral_escape"
+      ],
+      "enemies": [
+        "Ethereal Shrine"
+      ],
+      "category": "white_bag"
+    },
+    "Token of Warmth": {
+      "biomes": [
+        "carboniferous",
+        "floral_escape"
+      ],
+      "enemies": [
+        "Ethereal Shrine"
+      ],
+      "category": "white_bag"
+    },
+    "Torrential Staff": {
+      "biomes": [
+        "coral_reefs"
+      ],
+      "enemies": [
+        "Maiden of the Sea"
+      ],
+      "category": "white_bag"
+    },
+    "Barnacle Basher": {
+      "biomes": [
+        "coral_reefs"
+      ],
+      "enemies": [
+        "Carp Emperor",
+        "Hermit God",
+        "World\u0092s Oyster"
+      ],
+      "category": "white_bag"
+    },
+    "Skull of Restless Souls": {
+      "biomes": [
+        "dead_church"
+      ],
+      "enemies": [
+        "Death Knight",
+        "Kage Kami",
+        "Lantern Holder",
+        "Shady Sect Leader"
+      ],
+      "category": "white_bag"
+    },
+    "Seal of Blasphemous Prayer": {
+      "biomes": [
+        "dead_church"
+      ],
+      "enemies": [
+        "Pentaract",
+        "The Lich King",
+        "The Plague Doctor"
+      ],
+      "category": "white_bag"
+    },
+    "Trap of the Vile Spirit": {
+      "biomes": [
+        "dead_church",
+        "shipwreck_cove"
+      ],
+      "enemies": [
+        "Well of Souls",
+        "Ghost Ship"
+      ],
+      "category": "white_bag"
+    },
+    "Cloak of the Deep": {
+      "biomes": [
+        "deep_sea_abyss"
+      ],
+      "enemies": [
+        "Abyssal Hydra",
+        "Abyssal Kraken",
+        "Abyssal Siren",
+        "Abyssal Squid",
+        "Corsair Crab",
+        "Hadopelagic Jellyfish",
+        "Hadopelagic Submersible",
+        "Sea Dragon",
+        "Sunken Treasure"
+      ],
+      "category": "white_bag"
+    },
+    "Pollen Incendiary": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "enemies": [
+        "Great Owl",
+        "Green Fingers",
+        "Overgrown Lily",
+        "Rhinoceros",
+        "Snapdragon",
+        "Spore Spreader",
+        "Sunflower Sentinel",
+        "Vegetarian Tiger",
+        "Alluring Blossom",
+        "Elder Ent Ancient",
+        "Hornet\u0092s Nest"
+      ],
+      "category": "white_bag"
+    },
+    "Blue Beehemoth Quiver": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "enemies": [
+        "Corrupted Bramblethorn"
+      ],
+      "category": "white_bag"
+    },
+    "Red Beehemoth Quiver": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "enemies": [
+        "Corrupted Bramblethorn"
+      ],
+      "category": "white_bag"
+    },
+    "Yellow Beehemoth Quiver": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "enemies": [
+        "Corrupted Bramblethorn"
+      ],
+      "category": "white_bag"
+    },
+    "Kogbold Multitool": {
+      "biomes": [
+        "floral_escape",
+        "runic_tundra"
+      ],
+      "enemies": [
+        "Kogbold Expedition Engine",
+        "Aerial Warship"
+      ],
+      "category": "white_bag"
+    },
+    "Mace of the Pumpkin Effigy": {
+      "biomes": [
+        "haunted_hallows"
+      ],
+      "enemies": [
+        "Alpha Werewolf",
+        "Flesh Golem",
+        "Sinister Scarecrow"
+      ],
+      "category": "white_bag"
+    },
+    "Orb of Conflict": {
+      "biomes": [
+        "haunted_hallows",
+        "risen_hell"
+      ],
+      "enemies": [
+        "Possessed Pumpkin",
+        "Skull Shrine"
+      ],
+      "category": "white_bag"
+    },
+    "Doom\u0092s Emblem": {
+      "biomes": [
+        "risen_hell"
+      ],
+      "enemies": [
+        "Demonic Effigy",
+        "Eternal Tormentor",
+        "Infernal Ironsmith",
+        "Red Demon"
+      ],
+      "category": "white_bag"
+    },
+    "Runes of Knowledge": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "enemies": [
+        "Frost Dragon",
+        "Ice Giant",
+        "Runic Golem",
+        "Snow Troll",
+        "Snow Wolf",
+        "Snow Yeti",
+        "Tundra Tribe Leader",
+        "Tundra Tribe Fighter",
+        "Tundra Tribe Shaman",
+        "Assembled Giant",
+        "Monstrous Grizzly"
+      ],
+      "category": "white_bag"
+    },
+    "Deadly Keg": {
+      "biomes": [
+        "runic_tundra",
+        "shipwreck_cove"
+      ],
+      "enemies": [
+        "Beer God"
+      ],
+      "category": "white_bag"
+    },
+    "Greaterhosen": {
+      "biomes": [
+        "runic_tundra",
+        "shipwreck_cove"
+      ],
+      "enemies": [
+        "Beer God"
+      ],
+      "category": "white_bag"
+    },
+    "Mighty Stein": {
+      "biomes": [
+        "runic_tundra",
+        "shipwreck_cove"
+      ],
+      "enemies": [
+        "Beer God"
+      ],
+      "category": "white_bag"
+    },
+    "Shield of Ogmur": {
+      "biomes": [
+        "runic_tundra",
+        "sanguine_forest",
+        "shipwreck_cove"
+      ],
+      "enemies": [
+        "Lord of the Lost Lands",
+        "Skeletal Centipede",
+        "Bilgewater\u0092s Galleon"
+      ],
+      "category": "white_bag"
+    },
+    "Cloak of Bloody Surprises": {
+      "biomes": [
+        "runic_tundra",
+        "sanguine_forest"
+      ],
+      "enemies": [
+        "Lost Sentry",
+        "Bloodroot Heart",
+        "Ravenous Rot"
+      ],
+      "category": "white_bag"
+    },
+    "Bloodbath Blade": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "enemies": [
+        "Blood Ooze",
+        "Blood Hound",
+        "Bloodroot Treant",
+        "Bulbous Perforator",
+        "Ghoul",
+        "Ravenous Harpy",
+        "Shadow Lurker",
+        "Organ Harvester",
+        "Scout Colony"
+      ],
+      "category": "white_bag"
+    },
+    "Pirate\u0092s Artillery": {
+      "biomes": [
+        "shipwreck_cove"
+      ],
+      "enemies": [
+        "Animal Merchant",
+        "Washed-Up Captain"
+      ],
+      "category": "white_bag"
+    },
+    "Quiver of Thunder": {
+      "biomes": [
+        "shipwreck_cove"
+      ],
+      "enemies": [
+        "Eye of the Storm"
+      ],
+      "category": "white_bag"
+    },
+    "Celestial Recurve": {
+      "biomes": [
+        "sprite_forest"
+      ],
+      "enemies": [
+        "Artificial Sprite God",
+        "Celestial Sprite",
+        "Cosmic Sprite",
+        "Elder Sprite Tree"
+      ],
+      "category": "white_bag"
+    }
+  },
+  "dungeons": {},
+  "enemies": {
+    "Beholder": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Candy Gnome": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Djinn": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Ent God": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Flying Brain": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Medusa": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Nameless Gladiator": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Rock Construct": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Slime God": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Steel Construct": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Unsung Jester": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Vagabond Satyr": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Wood Construct": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Dragon\u0092s Treasure": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Insurgent Rebel Commander": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Mysterious Crystal": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Sword in the Stone?": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Cavalry Lance"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Cube God": {
+      "biomes": [
+        "abandoned_city",
+        "sprite_forest"
+      ],
+      "items": [
+        "Dirk of Cronus"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Goblin Patriarch": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Hama Yumi"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Grand Sphinx": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Helm of the Juggernaut"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Jade and Garnet Statues": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Hama Yumi",
+        "Kageboshi"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Legion General": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Hama Yumi"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Maze Minotaur": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Tablet of the King\u0092s Avatar"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Rock Dragon": {
+      "biomes": [
+        "abandoned_city"
+      ],
+      "items": [
+        "Ray Katana"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Beached Buccaneer": {
+      "biomes": [
+        "beach"
+      ],
+      "items": [
+        "Adventurer\u0092s Scarf"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Animate Sigillaria": {
+      "biomes": [
+        "carboniferous"
+      ],
+      "items": [
+        "Evolutionary Records"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Colossal Mantis": {
+      "biomes": [
+        "carboniferous"
+      ],
+      "items": [
+        "Evolutionary Records"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Grand Dragonfly": {
+      "biomes": [
+        "carboniferous"
+      ],
+      "items": [
+        "Evolutionary Records"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Hunter Dragonfly": {
+      "biomes": [
+        "carboniferous"
+      ],
+      "items": [
+        "Evolutionary Records"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Man-Eating Flytrap": {
+      "biomes": [
+        "carboniferous"
+      ],
+      "items": [
+        "Evolutionary Records"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Scutosaurus": {
+      "biomes": [
+        "carboniferous"
+      ],
+      "items": [
+        "Evolutionary Records"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Spitting Arachnid": {
+      "biomes": [
+        "carboniferous"
+      ],
+      "items": [
+        "Evolutionary Records"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Sting Spider": {
+      "biomes": [
+        "carboniferous"
+      ],
+      "items": [
+        "Evolutionary Records"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Critter Brood": {
+      "biomes": [
+        "carboniferous"
+      ],
+      "items": [
+        "Evolutionary Records"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Ancient Kaiju": {
+      "biomes": [
+        "carboniferous"
+      ],
+      "items": [
+        "Crystallised Fang\u0092s Venom"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Crystal Worm Father": {
+      "biomes": [
+        "carboniferous",
+        "runic_tundra"
+      ],
+      "items": [
+        "Crystallised Fang\u0092s Venom"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Ethereal Shrine": {
+      "biomes": [
+        "carboniferous",
+        "floral_escape"
+      ],
+      "items": [
+        "Token of Happiness",
+        "Token of Warmth"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Flying Behemoth": {
+      "biomes": [
+        "carboniferous"
+      ],
+      "items": [
+        "Tablet of the King\u0092s Avatar"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Beach Bum": {
+      "biomes": [
+        "coral_reefs"
+      ],
+      "items": [],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Maiden of the Sea": {
+      "biomes": [
+        "coral_reefs"
+      ],
+      "items": [
+        "Torrential Staff"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Carp Emperor": {
+      "biomes": [
+        "coral_reefs"
+      ],
+      "items": [
+        "Barnacle Basher"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Hermit God": {
+      "biomes": [
+        "coral_reefs"
+      ],
+      "items": [
+        "Barnacle Basher"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "World\u0092s Oyster": {
+      "biomes": [
+        "coral_reefs"
+      ],
+      "items": [
+        "Barnacle Basher"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Death Knight": {
+      "biomes": [
+        "dead_church"
+      ],
+      "items": [
+        "Skull of Restless Souls"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Kage Kami": {
+      "biomes": [
+        "dead_church"
+      ],
+      "items": [
+        "Skull of Restless Souls"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Lantern Holder": {
+      "biomes": [
+        "dead_church"
+      ],
+      "items": [
+        "Skull of Restless Souls"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Shady Sect Leader": {
+      "biomes": [
+        "dead_church"
+      ],
+      "items": [
+        "Skull of Restless Souls"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Pentaract": {
+      "biomes": [
+        "dead_church"
+      ],
+      "items": [
+        "Seal of Blasphemous Prayer"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "The Lich King": {
+      "biomes": [
+        "dead_church"
+      ],
+      "items": [
+        "Seal of Blasphemous Prayer"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "The Plague Doctor": {
+      "biomes": [
+        "dead_church"
+      ],
+      "items": [
+        "Seal of Blasphemous Prayer"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Well of Souls": {
+      "biomes": [
+        "dead_church"
+      ],
+      "items": [
+        "Trap of the Vile Spirit"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Abyssal Hydra": {
+      "biomes": [
+        "deep_sea_abyss"
+      ],
+      "items": [
+        "Cloak of the Deep"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Abyssal Kraken": {
+      "biomes": [
+        "deep_sea_abyss"
+      ],
+      "items": [
+        "Cloak of the Deep"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Abyssal Siren": {
+      "biomes": [
+        "deep_sea_abyss"
+      ],
+      "items": [
+        "Cloak of the Deep"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Abyssal Squid": {
+      "biomes": [
+        "deep_sea_abyss"
+      ],
+      "items": [
+        "Cloak of the Deep"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Corsair Crab": {
+      "biomes": [
+        "deep_sea_abyss"
+      ],
+      "items": [
+        "Cloak of the Deep"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Hadopelagic Jellyfish": {
+      "biomes": [
+        "deep_sea_abyss"
+      ],
+      "items": [
+        "Cloak of the Deep"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Hadopelagic Submersible": {
+      "biomes": [
+        "deep_sea_abyss"
+      ],
+      "items": [
+        "Cloak of the Deep"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Sea Dragon": {
+      "biomes": [
+        "deep_sea_abyss"
+      ],
+      "items": [
+        "Cloak of the Deep"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Sunken Treasure": {
+      "biomes": [
+        "deep_sea_abyss"
+      ],
+      "items": [
+        "Cloak of the Deep"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Adult Baneserpent": {
+      "biomes": [
+        "deep_sea_abyss"
+      ],
+      "items": [
+        "Crystallised Fang\u0092s Venom"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Great Owl": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "items": [
+        "Pollen Incendiary"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Green Fingers": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "items": [
+        "Pollen Incendiary"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Overgrown Lily": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "items": [
+        "Pollen Incendiary"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Rhinoceros": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "items": [
+        "Pollen Incendiary"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Snapdragon": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "items": [
+        "Pollen Incendiary"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Spore Spreader": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "items": [
+        "Pollen Incendiary"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Sunflower Sentinel": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "items": [
+        "Pollen Incendiary"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Vegetarian Tiger": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "items": [
+        "Pollen Incendiary"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Alluring Blossom": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "items": [
+        "Pollen Incendiary"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Elder Ent Ancient": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "items": [
+        "Pollen Incendiary"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Hornet\u0092s Nest": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "items": [
+        "Pollen Incendiary"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Corrupted Bramblethorn": {
+      "biomes": [
+        "floral_escape"
+      ],
+      "items": [
+        "Blue Beehemoth Quiver",
+        "Red Beehemoth Quiver",
+        "Yellow Beehemoth Quiver"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Killer Bee Nest": {
+      "biomes": [
+        "floral_escape",
+        "sanguine_forest"
+      ],
+      "items": [],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Kogbold Expedition Engine": {
+      "biomes": [
+        "floral_escape",
+        "runic_tundra"
+      ],
+      "items": [
+        "Kogbold Multitool"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Alpha Werewolf": {
+      "biomes": [
+        "haunted_hallows"
+      ],
+      "items": [
+        "Mace of the Pumpkin Effigy"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Flesh Golem": {
+      "biomes": [
+        "haunted_hallows"
+      ],
+      "items": [
+        "Mace of the Pumpkin Effigy"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Sinister Scarecrow": {
+      "biomes": [
+        "haunted_hallows"
+      ],
+      "items": [
+        "Mace of the Pumpkin Effigy"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Possessed Pumpkin": {
+      "biomes": [
+        "haunted_hallows"
+      ],
+      "items": [
+        "Orb of Conflict"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Sigma Werewolf": {
+      "biomes": [
+        "haunted_hallows"
+      ],
+      "items": [
+        "Helm of the Juggernaut"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Skull Knight": {
+      "biomes": [
+        "haunted_hallows"
+      ],
+      "items": [
+        "Kageboshi"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Skull Shrine": {
+      "biomes": [
+        "haunted_hallows",
+        "risen_hell"
+      ],
+      "items": [
+        "Orb of Conflict"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Ghost King": {
+      "biomes": [
+        "high_forest"
+      ],
+      "items": [],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Oasis Giant": {
+      "biomes": [
+        "mid_desert"
+      ],
+      "items": [],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Phoenix Lord": {
+      "biomes": [
+        "mid_desert"
+      ],
+      "items": [],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Deathmage": {
+      "biomes": [
+        "mid_plains"
+      ],
+      "items": [],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Lich": {
+      "biomes": [
+        "mid_plains"
+      ],
+      "items": [],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Ent Ancient": {
+      "biomes": [
+        "nature_ruins"
+      ],
+      "items": [],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Great Coil Snake": {
+      "biomes": [
+        "nature_ruins"
+      ],
+      "items": [],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Demonic Effigy": {
+      "biomes": [
+        "risen_hell"
+      ],
+      "items": [
+        "Doom\u0092s Emblem"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Eternal Tormentor": {
+      "biomes": [
+        "risen_hell"
+      ],
+      "items": [
+        "Doom\u0092s Emblem"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Infernal Ironsmith": {
+      "biomes": [
+        "risen_hell"
+      ],
+      "items": [
+        "Doom\u0092s Emblem"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Red Demon": {
+      "biomes": [
+        "risen_hell"
+      ],
+      "items": [
+        "Doom\u0092s Emblem"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Frost Dragon": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Runes of Knowledge"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Ice Giant": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Runes of Knowledge"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Runic Golem": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Runes of Knowledge"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Snow Troll": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Runes of Knowledge"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Snow Wolf": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Runes of Knowledge"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Snow Yeti": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Runes of Knowledge"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Tundra Tribe Leader": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Runes of Knowledge"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Tundra Tribe Fighter": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Runes of Knowledge"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Tundra Tribe Shaman": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Runes of Knowledge"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Assembled Giant": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Runes of Knowledge"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Monstrous Grizzly": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Runes of Knowledge"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Aerial Warship": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Kogbold Multitool"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Beer God": {
+      "biomes": [
+        "runic_tundra",
+        "shipwreck_cove"
+      ],
+      "items": [
+        "Deadly Keg",
+        "Greaterhosen",
+        "Mighty Stein"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Lord of the Lost Lands": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Shield of Ogmur"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Lost Sentry": {
+      "biomes": [
+        "runic_tundra",
+        "sanguine_forest"
+      ],
+      "items": [
+        "Cloak of Bloody Surprises"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Sentient Monolith": {
+      "biomes": [
+        "runic_tundra"
+      ],
+      "items": [
+        "Crystallised Fang\u0092s Venom"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Blood Ooze": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "items": [
+        "Bloodbath Blade"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Blood Hound": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "items": [
+        "Bloodbath Blade"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Bloodroot Treant": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "items": [
+        "Bloodbath Blade"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Bulbous Perforator": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "items": [
+        "Bloodbath Blade"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Ghoul": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "items": [
+        "Bloodbath Blade"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Ravenous Harpy": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "items": [
+        "Bloodbath Blade"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Shadow Lurker": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "items": [
+        "Bloodbath Blade"
+      ],
+      "dungeons": [],
+      "category": "monsters"
+    },
+    "Organ Harvester": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "items": [
+        "Bloodbath Blade"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Scout Colony": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "items": [
+        "Bloodbath Blade"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Avatar of the Forgotten King": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "items": [
+        "Tablet of the King\u0092s Avatar"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Bloodroot Heart": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "items": [
+        "Cloak of Bloody Surprises"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Ravenous Rot": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "items": [
+        "Cloak of Bloody Surprises"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Skeletal Centipede": {
+      "biomes": [
+        "sanguine_forest"
+      ],
+      "items": [
+        "Shield of Ogmur"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Animal Merchant": {
+      "biomes": [
+        "shipwreck_cove"
+      ],
+      "items": [
+        "Pirate\u0092s Artillery"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Washed-Up Captain": {
+      "biomes": [
+        "shipwreck_cove"
+      ],
+      "items": [
+        "Pirate\u0092s Artillery"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Bilgewater\u0092s Galleon": {
+      "biomes": [
+        "shipwreck_cove"
+      ],
+      "items": [
+        "Shield of Ogmur"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Crab Sovereign": {
+      "biomes": [
+        "shipwreck_cove"
+      ],
+      "items": [
+        "Helm of the Juggernaut"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Eye of the Storm": {
+      "biomes": [
+        "shipwreck_cove"
+      ],
+      "items": [
+        "Quiver of Thunder"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Ghost Ship": {
+      "biomes": [
+        "shipwreck_cove"
+      ],
+      "items": [
+        "Trap of the Vile Spirit"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Artificial Sprite God": {
+      "biomes": [
+        "sprite_forest"
+      ],
+      "items": [
+        "Celestial Recurve"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Celestial Sprite": {
+      "biomes": [
+        "sprite_forest"
+      ],
+      "items": [
+        "Celestial Recurve"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Cosmic Sprite": {
+      "biomes": [
+        "sprite_forest"
+      ],
+      "items": [
+        "Celestial Recurve"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Elder Sprite Tree": {
+      "biomes": [
+        "sprite_forest"
+      ],
+      "items": [
+        "Celestial Recurve"
+      ],
+      "dungeons": [],
+      "category": "heroes"
+    },
+    "Astral Rift": {
+      "biomes": [
+        "sprite_forest"
+      ],
+      "items": [
+        "Dirk of Cronus"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    },
+    "Daughter of Limon": {
+      "biomes": [
+        "sprite_forest"
+      ],
+      "items": [
+        "Ray Katana"
+      ],
+      "dungeons": [],
+      "category": "encounters"
+    }
+  },
+  "biomes": {
+    "abandoned_city": {
+      "name": "Abandoned City",
+      "enemies": [
+        "Beholder",
+        "Candy Gnome",
+        "Djinn",
+        "Ent God",
+        "Flying Brain",
+        "Medusa",
+        "Nameless Gladiator",
+        "Rock Construct",
+        "Slime God",
+        "Steel Construct",
+        "Unsung Jester",
+        "Vagabond Satyr",
+        "Wood Construct",
+        "Dragon\u0092s Treasure",
+        "Insurgent Rebel Commander",
+        "Mysterious Crystal",
+        "Sword in the Stone?",
+        "Cube God",
+        "Goblin Patriarch",
+        "Grand Sphinx",
+        "Jade and Garnet Statues",
+        "Legion General",
+        "Maze Minotaur",
+        "Rock Dragon"
+      ],
+      "dungeons": [],
+      "items": [
+        "Cavalry Lance",
+        "Dirk of Cronus",
+        "Hama Yumi",
+        "Helm of the Juggernaut",
+        "Kageboshi",
+        "Ray Katana",
+        "Tablet of the King\u0092s Avatar"
+      ]
+    },
+    "beach": {
+      "name": "Beach",
+      "enemies": [
+        "Beached Buccaneer"
+      ],
+      "dungeons": [],
+      "items": [
+        "Adventurer\u0092s Scarf"
+      ]
+    },
+    "carboniferous": {
+      "name": "Carboniferous",
+      "enemies": [
+        "Animate Sigillaria",
+        "Colossal Mantis",
+        "Grand Dragonfly",
+        "Hunter Dragonfly",
+        "Man-Eating Flytrap",
+        "Scutosaurus",
+        "Spitting Arachnid",
+        "Sting Spider",
+        "Critter Brood",
+        "Ancient Kaiju",
+        "Crystal Worm Father",
+        "Ethereal Shrine",
+        "Flying Behemoth"
+      ],
+      "dungeons": [],
+      "items": [
+        "Crystallised Fang\u0092s Venom",
+        "Evolutionary Records",
+        "Tablet of the King\u0092s Avatar",
+        "Token of Happiness",
+        "Token of Warmth"
+      ]
+    },
+    "coral_reefs": {
+      "name": "Coral Reefs",
+      "enemies": [
+        "Beach Bum",
+        "Maiden of the Sea",
+        "Carp Emperor",
+        "Hermit God",
+        "World\u0092s Oyster"
+      ],
+      "dungeons": [],
+      "items": [
+        "Barnacle Basher",
+        "Torrential Staff"
+      ]
+    },
+    "dead_church": {
+      "name": "Dead Church",
+      "enemies": [
+        "Death Knight",
+        "Kage Kami",
+        "Lantern Holder",
+        "Shady Sect Leader",
+        "Pentaract",
+        "The Lich King",
+        "The Plague Doctor",
+        "Well of Souls"
+      ],
+      "dungeons": [],
+      "items": [
+        "Seal of Blasphemous Prayer",
+        "Skull of Restless Souls",
+        "Trap of the Vile Spirit"
+      ]
+    },
+    "deep_sea_abyss": {
+      "name": "Deep Sea Abyss",
+      "enemies": [
+        "Abyssal Hydra",
+        "Abyssal Kraken",
+        "Abyssal Siren",
+        "Abyssal Squid",
+        "Corsair Crab",
+        "Hadopelagic Jellyfish",
+        "Hadopelagic Submersible",
+        "Sea Dragon",
+        "Sunken Treasure",
+        "Adult Baneserpent"
+      ],
+      "dungeons": [],
+      "items": [
+        "Cloak of the Deep",
+        "Crystallised Fang\u0092s Venom"
+      ]
+    },
+    "floral_escape": {
+      "name": "Floral Escape",
+      "enemies": [
+        "Great Owl",
+        "Green Fingers",
+        "Overgrown Lily",
+        "Rhinoceros",
+        "Snapdragon",
+        "Spore Spreader",
+        "Sunflower Sentinel",
+        "Vegetarian Tiger",
+        "Alluring Blossom",
+        "Elder Ent Ancient",
+        "Hornet\u0092s Nest",
+        "Corrupted Bramblethorn",
+        "Killer Bee Nest",
+        "Ethereal Shrine",
+        "Kogbold Expedition Engine"
+      ],
+      "dungeons": [],
+      "items": [
+        "Blue Beehemoth Quiver",
+        "Kogbold Multitool",
+        "Pollen Incendiary",
+        "Red Beehemoth Quiver",
+        "Token of Happiness",
+        "Token of Warmth",
+        "Yellow Beehemoth Quiver"
+      ]
+    },
+    "haunted_hallows": {
+      "name": "Haunted Hallows",
+      "enemies": [
+        "Alpha Werewolf",
+        "Flesh Golem",
+        "Sinister Scarecrow",
+        "Possessed Pumpkin",
+        "Sigma Werewolf",
+        "Skull Knight",
+        "Skull Shrine"
+      ],
+      "dungeons": [],
+      "items": [
+        "Helm of the Juggernaut",
+        "Kageboshi",
+        "Mace of the Pumpkin Effigy",
+        "Orb of Conflict"
+      ]
+    },
+    "high_desert": {
+      "name": "High Desert",
+      "enemies": [],
+      "dungeons": [],
+      "items": []
+    },
+    "high_forest": {
+      "name": "High Forest (Dark Forest)",
+      "enemies": [
+        "Ghost King"
+      ],
+      "dungeons": [],
+      "items": []
+    },
+    "high_plains": {
+      "name": "High Plains (Withered Plains)",
+      "enemies": [],
+      "dungeons": [],
+      "items": []
+    },
+    "low_forest": {
+      "name": "Low Forest (Forest)",
+      "enemies": [],
+      "dungeons": [],
+      "items": []
+    },
+    "mid_desert": {
+      "name": "Mid Desert",
+      "enemies": [
+        "Oasis Giant",
+        "Phoenix Lord"
+      ],
+      "dungeons": [],
+      "items": []
+    },
+    "mid_plains": {
+      "name": "Mid Plains (Lime Plains)",
+      "enemies": [
+        "Deathmage",
+        "Lich"
+      ],
+      "dungeons": [],
+      "items": []
+    },
+    "nature_ruins": {
+      "name": "Nature Ruins (Mid Forest)",
+      "enemies": [
+        "Ent Ancient",
+        "Great Coil Snake"
+      ],
+      "dungeons": [],
+      "items": []
+    },
+    "risen_hell": {
+      "name": "Risen Hell",
+      "enemies": [
+        "Demonic Effigy",
+        "Eternal Tormentor",
+        "Infernal Ironsmith",
+        "Red Demon",
+        "Skull Shrine"
+      ],
+      "dungeons": [],
+      "items": [
+        "Doom\u0092s Emblem",
+        "Orb of Conflict"
+      ]
+    },
+    "runic_tundra": {
+      "name": "Runic Tundra",
+      "enemies": [
+        "Frost Dragon",
+        "Ice Giant",
+        "Runic Golem",
+        "Snow Troll",
+        "Snow Wolf",
+        "Snow Yeti",
+        "Tundra Tribe Leader",
+        "Tundra Tribe Fighter",
+        "Tundra Tribe Shaman",
+        "Assembled Giant",
+        "Monstrous Grizzly",
+        "Aerial Warship",
+        "Beer God",
+        "Crystal Worm Father",
+        "Kogbold Expedition Engine",
+        "Lord of the Lost Lands",
+        "Lost Sentry",
+        "Sentient Monolith"
+      ],
+      "dungeons": [],
+      "items": [
+        "Cloak of Bloody Surprises",
+        "Crystallised Fang\u0092s Venom",
+        "Deadly Keg",
+        "Greaterhosen",
+        "Kogbold Multitool",
+        "Mighty Stein",
+        "Runes of Knowledge",
+        "Shield of Ogmur"
+      ]
+    },
+    "sanguine_forest": {
+      "name": "Sanguine Forest",
+      "enemies": [
+        "Blood Ooze",
+        "Blood Hound",
+        "Bloodroot Treant",
+        "Bulbous Perforator",
+        "Ghoul",
+        "Ravenous Harpy",
+        "Shadow Lurker",
+        "Organ Harvester",
+        "Scout Colony",
+        "Avatar of the Forgotten King",
+        "Bloodroot Heart",
+        "Killer Bee Nest",
+        "Lost Sentry",
+        "Ravenous Rot",
+        "Skeletal Centipede"
+      ],
+      "dungeons": [],
+      "items": [
+        "Bloodbath Blade",
+        "Cloak of Bloody Surprises",
+        "Shield of Ogmur",
+        "Tablet of the King\u0092s Avatar"
+      ]
+    },
+    "shipwreck_cove": {
+      "name": "Shipwreck Cove",
+      "enemies": [
+        "Animal Merchant",
+        "Washed-Up Captain",
+        "Beer God",
+        "Bilgewater\u0092s Galleon",
+        "Crab Sovereign",
+        "Eye of the Storm",
+        "Ghost Ship"
+      ],
+      "dungeons": [],
+      "items": [
+        "Deadly Keg",
+        "Greaterhosen",
+        "Helm of the Juggernaut",
+        "Mighty Stein",
+        "Pirate\u0092s Artillery",
+        "Quiver of Thunder",
+        "Shield of Ogmur",
+        "Trap of the Vile Spirit"
+      ]
+    },
+    "sprite_forest": {
+      "name": "Sprite Forest",
+      "enemies": [
+        "Artificial Sprite God",
+        "Celestial Sprite",
+        "Cosmic Sprite",
+        "Elder Sprite Tree",
+        "Astral Rift",
+        "Cube God",
+        "Daughter of Limon"
+      ],
+      "dungeons": [],
+      "items": [
+        "Celestial Recurve",
+        "Dirk of Cronus",
+        "Ray Katana"
+      ]
+    },
+    "undead_forest": {
+      "name": "Undead Forest",
+      "enemies": [],
+      "dungeons": [],
+      "items": []
+    },
+    "prehistoric": {
+      "name": "prehistoric",
+      "enemies": [],
+      "dungeons": [],
+      "items": []
+    }
+  },
+  "indexes": {
+    "item_to_biomes": {
+      "Cavalry Lance": [
+        "abandoned_city"
+      ],
+      "Dirk of Cronus": [
+        "abandoned_city",
+        "sprite_forest"
+      ],
+      "Hama Yumi": [
+        "abandoned_city"
+      ],
+      "Helm of the Juggernaut": [
+        "abandoned_city",
+        "haunted_hallows",
+        "shipwreck_cove"
+      ],
+      "Kageboshi": [
+        "abandoned_city",
+        "haunted_hallows"
+      ],
+      "Tablet of the King\u0092s Avatar": [
+        "abandoned_city",
+        "carboniferous",
+        "sanguine_forest"
+      ],
+      "Ray Katana": [
+        "abandoned_city",
+        "sprite_forest"
+      ],
+      "Adventurer\u0092s Scarf": [
+        "beach"
+      ],
+      "Evolutionary Records": [
+        "carboniferous"
+      ],
+      "Crystallised Fang\u0092s Venom": [
+        "carboniferous",
+        "deep_sea_abyss",
+        "runic_tundra"
+      ],
+      "Token of Happiness": [
+        "carboniferous",
+        "floral_escape"
+      ],
+      "Token of Warmth": [
+        "carboniferous",
+        "floral_escape"
+      ],
+      "Torrential Staff": [
+        "coral_reefs"
+      ],
+      "Barnacle Basher": [
+        "coral_reefs"
+      ],
+      "Skull of Restless Souls": [
+        "dead_church"
+      ],
+      "Seal of Blasphemous Prayer": [
+        "dead_church"
+      ],
+      "Trap of the Vile Spirit": [
+        "dead_church",
+        "shipwreck_cove"
+      ],
+      "Cloak of the Deep": [
+        "deep_sea_abyss"
+      ],
+      "Pollen Incendiary": [
+        "floral_escape"
+      ],
+      "Blue Beehemoth Quiver": [
+        "floral_escape"
+      ],
+      "Red Beehemoth Quiver": [
+        "floral_escape"
+      ],
+      "Yellow Beehemoth Quiver": [
+        "floral_escape"
+      ],
+      "Kogbold Multitool": [
+        "floral_escape",
+        "runic_tundra"
+      ],
+      "Mace of the Pumpkin Effigy": [
+        "haunted_hallows"
+      ],
+      "Orb of Conflict": [
+        "haunted_hallows",
+        "risen_hell"
+      ],
+      "Doom\u0092s Emblem": [
+        "risen_hell"
+      ],
+      "Runes of Knowledge": [
+        "runic_tundra"
+      ],
+      "Deadly Keg": [
+        "runic_tundra",
+        "shipwreck_cove"
+      ],
+      "Greaterhosen": [
+        "runic_tundra",
+        "shipwreck_cove"
+      ],
+      "Mighty Stein": [
+        "runic_tundra",
+        "shipwreck_cove"
+      ],
+      "Shield of Ogmur": [
+        "runic_tundra",
+        "sanguine_forest",
+        "shipwreck_cove"
+      ],
+      "Cloak of Bloody Surprises": [
+        "runic_tundra",
+        "sanguine_forest"
+      ],
+      "Bloodbath Blade": [
+        "sanguine_forest"
+      ],
+      "Pirate\u0092s Artillery": [
+        "shipwreck_cove"
+      ],
+      "Quiver of Thunder": [
+        "shipwreck_cove"
+      ],
+      "Celestial Recurve": [
+        "sprite_forest"
+      ]
+    },
+    "dungeon_to_biomes": {},
+    "enemy_to_biomes": {
+      "Beholder": [
+        "abandoned_city"
+      ],
+      "Candy Gnome": [
+        "abandoned_city"
+      ],
+      "Djinn": [
+        "abandoned_city"
+      ],
+      "Ent God": [
+        "abandoned_city"
+      ],
+      "Flying Brain": [
+        "abandoned_city"
+      ],
+      "Medusa": [
+        "abandoned_city"
+      ],
+      "Nameless Gladiator": [
+        "abandoned_city"
+      ],
+      "Rock Construct": [
+        "abandoned_city"
+      ],
+      "Slime God": [
+        "abandoned_city"
+      ],
+      "Steel Construct": [
+        "abandoned_city"
+      ],
+      "Unsung Jester": [
+        "abandoned_city"
+      ],
+      "Vagabond Satyr": [
+        "abandoned_city"
+      ],
+      "Wood Construct": [
+        "abandoned_city"
+      ],
+      "Dragon\u0092s Treasure": [
+        "abandoned_city"
+      ],
+      "Insurgent Rebel Commander": [
+        "abandoned_city"
+      ],
+      "Mysterious Crystal": [
+        "abandoned_city"
+      ],
+      "Sword in the Stone?": [
+        "abandoned_city"
+      ],
+      "Cube God": [
+        "abandoned_city",
+        "sprite_forest"
+      ],
+      "Goblin Patriarch": [
+        "abandoned_city"
+      ],
+      "Grand Sphinx": [
+        "abandoned_city"
+      ],
+      "Jade and Garnet Statues": [
+        "abandoned_city"
+      ],
+      "Legion General": [
+        "abandoned_city"
+      ],
+      "Maze Minotaur": [
+        "abandoned_city"
+      ],
+      "Rock Dragon": [
+        "abandoned_city"
+      ],
+      "Beached Buccaneer": [
+        "beach"
+      ],
+      "Animate Sigillaria": [
+        "carboniferous"
+      ],
+      "Colossal Mantis": [
+        "carboniferous"
+      ],
+      "Grand Dragonfly": [
+        "carboniferous"
+      ],
+      "Hunter Dragonfly": [
+        "carboniferous"
+      ],
+      "Man-Eating Flytrap": [
+        "carboniferous"
+      ],
+      "Scutosaurus": [
+        "carboniferous"
+      ],
+      "Spitting Arachnid": [
+        "carboniferous"
+      ],
+      "Sting Spider": [
+        "carboniferous"
+      ],
+      "Critter Brood": [
+        "carboniferous"
+      ],
+      "Ancient Kaiju": [
+        "carboniferous"
+      ],
+      "Crystal Worm Father": [
+        "carboniferous",
+        "runic_tundra"
+      ],
+      "Ethereal Shrine": [
+        "carboniferous",
+        "floral_escape"
+      ],
+      "Flying Behemoth": [
+        "carboniferous"
+      ],
+      "Beach Bum": [
+        "coral_reefs"
+      ],
+      "Maiden of the Sea": [
+        "coral_reefs"
+      ],
+      "Carp Emperor": [
+        "coral_reefs"
+      ],
+      "Hermit God": [
+        "coral_reefs"
+      ],
+      "World\u0092s Oyster": [
+        "coral_reefs"
+      ],
+      "Death Knight": [
+        "dead_church"
+      ],
+      "Kage Kami": [
+        "dead_church"
+      ],
+      "Lantern Holder": [
+        "dead_church"
+      ],
+      "Shady Sect Leader": [
+        "dead_church"
+      ],
+      "Pentaract": [
+        "dead_church"
+      ],
+      "The Lich King": [
+        "dead_church"
+      ],
+      "The Plague Doctor": [
+        "dead_church"
+      ],
+      "Well of Souls": [
+        "dead_church"
+      ],
+      "Abyssal Hydra": [
+        "deep_sea_abyss"
+      ],
+      "Abyssal Kraken": [
+        "deep_sea_abyss"
+      ],
+      "Abyssal Siren": [
+        "deep_sea_abyss"
+      ],
+      "Abyssal Squid": [
+        "deep_sea_abyss"
+      ],
+      "Corsair Crab": [
+        "deep_sea_abyss"
+      ],
+      "Hadopelagic Jellyfish": [
+        "deep_sea_abyss"
+      ],
+      "Hadopelagic Submersible": [
+        "deep_sea_abyss"
+      ],
+      "Sea Dragon": [
+        "deep_sea_abyss"
+      ],
+      "Sunken Treasure": [
+        "deep_sea_abyss"
+      ],
+      "Adult Baneserpent": [
+        "deep_sea_abyss"
+      ],
+      "Great Owl": [
+        "floral_escape"
+      ],
+      "Green Fingers": [
+        "floral_escape"
+      ],
+      "Overgrown Lily": [
+        "floral_escape"
+      ],
+      "Rhinoceros": [
+        "floral_escape"
+      ],
+      "Snapdragon": [
+        "floral_escape"
+      ],
+      "Spore Spreader": [
+        "floral_escape"
+      ],
+      "Sunflower Sentinel": [
+        "floral_escape"
+      ],
+      "Vegetarian Tiger": [
+        "floral_escape"
+      ],
+      "Alluring Blossom": [
+        "floral_escape"
+      ],
+      "Elder Ent Ancient": [
+        "floral_escape"
+      ],
+      "Hornet\u0092s Nest": [
+        "floral_escape"
+      ],
+      "Corrupted Bramblethorn": [
+        "floral_escape"
+      ],
+      "Killer Bee Nest": [
+        "floral_escape",
+        "sanguine_forest"
+      ],
+      "Kogbold Expedition Engine": [
+        "floral_escape",
+        "runic_tundra"
+      ],
+      "Alpha Werewolf": [
+        "haunted_hallows"
+      ],
+      "Flesh Golem": [
+        "haunted_hallows"
+      ],
+      "Sinister Scarecrow": [
+        "haunted_hallows"
+      ],
+      "Possessed Pumpkin": [
+        "haunted_hallows"
+      ],
+      "Sigma Werewolf": [
+        "haunted_hallows"
+      ],
+      "Skull Knight": [
+        "haunted_hallows"
+      ],
+      "Skull Shrine": [
+        "haunted_hallows",
+        "risen_hell"
+      ],
+      "Ghost King": [
+        "high_forest"
+      ],
+      "Oasis Giant": [
+        "mid_desert"
+      ],
+      "Phoenix Lord": [
+        "mid_desert"
+      ],
+      "Deathmage": [
+        "mid_plains"
+      ],
+      "Lich": [
+        "mid_plains"
+      ],
+      "Ent Ancient": [
+        "nature_ruins"
+      ],
+      "Great Coil Snake": [
+        "nature_ruins"
+      ],
+      "Demonic Effigy": [
+        "risen_hell"
+      ],
+      "Eternal Tormentor": [
+        "risen_hell"
+      ],
+      "Infernal Ironsmith": [
+        "risen_hell"
+      ],
+      "Red Demon": [
+        "risen_hell"
+      ],
+      "Frost Dragon": [
+        "runic_tundra"
+      ],
+      "Ice Giant": [
+        "runic_tundra"
+      ],
+      "Runic Golem": [
+        "runic_tundra"
+      ],
+      "Snow Troll": [
+        "runic_tundra"
+      ],
+      "Snow Wolf": [
+        "runic_tundra"
+      ],
+      "Snow Yeti": [
+        "runic_tundra"
+      ],
+      "Tundra Tribe Leader": [
+        "runic_tundra"
+      ],
+      "Tundra Tribe Fighter": [
+        "runic_tundra"
+      ],
+      "Tundra Tribe Shaman": [
+        "runic_tundra"
+      ],
+      "Assembled Giant": [
+        "runic_tundra"
+      ],
+      "Monstrous Grizzly": [
+        "runic_tundra"
+      ],
+      "Aerial Warship": [
+        "runic_tundra"
+      ],
+      "Beer God": [
+        "runic_tundra",
+        "shipwreck_cove"
+      ],
+      "Lord of the Lost Lands": [
+        "runic_tundra"
+      ],
+      "Lost Sentry": [
+        "runic_tundra",
+        "sanguine_forest"
+      ],
+      "Sentient Monolith": [
+        "runic_tundra"
+      ],
+      "Blood Ooze": [
+        "sanguine_forest"
+      ],
+      "Blood Hound": [
+        "sanguine_forest"
+      ],
+      "Bloodroot Treant": [
+        "sanguine_forest"
+      ],
+      "Bulbous Perforator": [
+        "sanguine_forest"
+      ],
+      "Ghoul": [
+        "sanguine_forest"
+      ],
+      "Ravenous Harpy": [
+        "sanguine_forest"
+      ],
+      "Shadow Lurker": [
+        "sanguine_forest"
+      ],
+      "Organ Harvester": [
+        "sanguine_forest"
+      ],
+      "Scout Colony": [
+        "sanguine_forest"
+      ],
+      "Avatar of the Forgotten King": [
+        "sanguine_forest"
+      ],
+      "Bloodroot Heart": [
+        "sanguine_forest"
+      ],
+      "Ravenous Rot": [
+        "sanguine_forest"
+      ],
+      "Skeletal Centipede": [
+        "sanguine_forest"
+      ],
+      "Animal Merchant": [
+        "shipwreck_cove"
+      ],
+      "Washed-Up Captain": [
+        "shipwreck_cove"
+      ],
+      "Bilgewater\u0092s Galleon": [
+        "shipwreck_cove"
+      ],
+      "Crab Sovereign": [
+        "shipwreck_cove"
+      ],
+      "Eye of the Storm": [
+        "shipwreck_cove"
+      ],
+      "Ghost Ship": [
+        "shipwreck_cove"
+      ],
+      "Artificial Sprite God": [
+        "sprite_forest"
+      ],
+      "Celestial Sprite": [
+        "sprite_forest"
+      ],
+      "Cosmic Sprite": [
+        "sprite_forest"
+      ],
+      "Elder Sprite Tree": [
+        "sprite_forest"
+      ],
+      "Astral Rift": [
+        "sprite_forest"
+      ],
+      "Daughter of Limon": [
+        "sprite_forest"
+      ]
+    }
+  }
+}

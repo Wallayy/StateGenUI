@@ -1,0 +1,394 @@
+{
+  "biomes": {
+    "beach": {
+      "name": "Beach",
+      "beacon_type": "Shores Beacon",
+      "tier": "Rookie",
+      "color": "#f4d03f"
+    },
+    "undead_forest": {
+      "name": "Undead Forest",
+      "beacon_type": "Gloomy Beacon",
+      "tier": "Rookie",
+      "color": "#5d6d7e"
+    },
+    "mid_plains": {
+      "name": "Mid Plains",
+      "beacon_type": "Plains Beacon",
+      "tier": "Rookie",
+      "color": "#abebc6"
+    },
+    "nature_ruins": {
+      "name": "Nature Ruins",
+      "beacon_type": "Forest Beacon",
+      "tier": "Rookie",
+      "color": "#1e8449"
+    },
+    "mid_desert": {
+      "name": "Mid Desert",
+      "beacon_type": "Arid Beacon",
+      "tier": "Rookie",
+      "color": "#f5b041"
+    },
+    "high_plains": {
+      "name": "High Plains",
+      "beacon_type": "Plains Beacon",
+      "tier": "Rookie",
+      "color": "#b7950b"
+    },
+    "high_forest": {
+      "name": "High Forest",
+      "beacon_type": "Forest Beacon",
+      "tier": "Rookie",
+      "color": "#196f3d"
+    },
+    "high_desert": {
+      "name": "High Desert",
+      "beacon_type": "Arid Beacon",
+      "tier": "Rookie",
+      "color": "#e67e22"
+    },
+    "coral_reefs": {
+      "name": "Coral Reefs",
+      "beacon_type": "Oceanic Beacon",
+      "tier": "Adept",
+      "color": "#5dade2"
+    },
+    "sprite_forest": {
+      "name": "Sprite Forest",
+      "beacon_type": "Fey Beacon",
+      "tier": "Adept",
+      "color": "#af7ac5"
+    },
+    "haunted_hallows": {
+      "name": "Haunted Hallows",
+      "beacon_type": "Haunted Beacon",
+      "tier": "Adept",
+      "color": "#8e44ad"
+    },
+    "shipwreck_cove": {
+      "name": "Shipwreck Cove",
+      "beacon_type": "Shipwrecked Beacon",
+      "tier": "Adept",
+      "color": "#1abc9c"
+    },
+    "dead_church": {
+      "name": "Dead Church",
+      "beacon_type": "Gothic Beacon",
+      "tier": "Adept",
+      "color": "#7f8c8d"
+    },
+    "risen_hell": {
+      "name": "Risen Hell",
+      "beacon_type": "Hell Beacon",
+      "tier": "Adept",
+      "color": "#e74c3c"
+    },
+    "abandoned_city": {
+      "name": "Abandoned City",
+      "beacon_type": "Abandoned Beacon",
+      "tier": "Adept",
+      "color": "#95a5a6"
+    },
+    "deep_sea_abyss": {
+      "name": "Deep Sea Abyss",
+      "beacon_type": "Abyssal Beacon",
+      "tier": "Veteran",
+      "color": "#2c3e50"
+    },
+    "prehistoric": {
+      "name": "Prehistoric",
+      "beacon_type": "Prehistoric Beacon",
+      "tier": "Veteran",
+      "color": "#27ae60"
+    },
+    "floral_escape": {
+      "name": "Floral Escape",
+      "beacon_type": "Floral Beacon",
+      "tier": "Veteran",
+      "color": "#f1948a"
+    },
+    "sanguine_forest": {
+      "name": "Sanguine Forest",
+      "beacon_type": "Sanguine Beacon",
+      "tier": "Veteran",
+      "color": "#c0392b"
+    },
+    "runic_tundra": {
+      "name": "Runic Tundra",
+      "beacon_type": "Frozen Beacon",
+      "tier": "Veteran",
+      "color": "#85c1e9"
+    }
+  },
+  "beacons": [
+    {
+      "name": "Shores Beacon",
+      "biome": "beach",
+      "x": 558.0,
+      "y": 1070.0
+    },
+    {
+      "name": "Shores Beacon",
+      "biome": "beach",
+      "x": 614.0,
+      "y": 1389.0
+    },
+    {
+      "name": "Shores Beacon",
+      "biome": "beach",
+      "x": 936.0,
+      "y": 1814.0
+    },
+    {
+      "name": "Shores Beacon",
+      "biome": "beach",
+      "x": 697.0,
+      "y": 1683.0
+    },
+    {
+      "name": "Gloomy Beacon",
+      "biome": "undead_forest",
+      "x": 683.0,
+      "y": 1380.0
+    },
+    {
+      "name": "Plains Beacon",
+      "biome": "mid_plains",
+      "x": 768.0,
+      "y": 1508.0
+    },
+    {
+      "name": "Forest Beacon",
+      "biome": "nature_ruins",
+      "x": 868.0,
+      "y": 1619.0
+    },
+    {
+      "name": "Arid Beacon",
+      "biome": "mid_desert",
+      "x": 1040.0,
+      "y": 1609.0
+    },
+    {
+      "name": "Plains Beacon",
+      "biome": "high_plains",
+      "x": 838.0,
+      "y": 1217.0
+    },
+    {
+      "name": "Forest Beacon",
+      "biome": "high_forest",
+      "x": 1063.0,
+      "y": 1492.0
+    },
+    {
+      "name": "Arid Beacon",
+      "biome": "high_desert",
+      "x": 1036.0,
+      "y": 1388.0
+    },
+    {
+      "name": "Oceanic Beacon",
+      "biome": "coral_reefs",
+      "x": 1639.0,
+      "y": 1589.0
+    },
+    {
+      "name": "Oceanic Beacon",
+      "biome": "coral_reefs",
+      "x": 1976.0,
+      "y": 1213.0
+    },
+    {
+      "name": "Oceanic Beacon",
+      "biome": "coral_reefs",
+      "x": 1867.0,
+      "y": 988.0
+    },
+    {
+      "name": "Fey Beacon",
+      "biome": "sprite_forest",
+      "x": 1342.0,
+      "y": 1470.0
+    },
+    {
+      "name": "Fey Beacon",
+      "biome": "sprite_forest",
+      "x": 1661.0,
+      "y": 1482.0
+    },
+    {
+      "name": "Fey Beacon",
+      "biome": "sprite_forest",
+      "x": 1708.0,
+      "y": 1058.0
+    },
+    {
+      "name": "Haunted Beacon",
+      "biome": "haunted_hallows",
+      "x": 1173.0,
+      "y": 1341.0
+    },
+    {
+      "name": "Haunted Beacon",
+      "biome": "haunted_hallows",
+      "x": 1527.0,
+      "y": 1317.0
+    },
+    {
+      "name": "Haunted Beacon",
+      "biome": "haunted_hallows",
+      "x": 787.0,
+      "y": 1050.0
+    },
+    {
+      "name": "Shipwrecked Beacon",
+      "biome": "shipwreck_cove",
+      "x": 1838.0,
+      "y": 1205.0
+    },
+    {
+      "name": "Shipwrecked Beacon",
+      "biome": "shipwreck_cove",
+      "x": 1852.0,
+      "y": 1530.0
+    },
+    {
+      "name": "Shipwrecked Beacon",
+      "biome": "shipwreck_cove",
+      "x": 992.0,
+      "y": 926.0
+    },
+    {
+      "name": "Gothic Beacon",
+      "biome": "dead_church",
+      "x": 1339.0,
+      "y": 1337.0
+    },
+    {
+      "name": "Gothic Beacon",
+      "biome": "dead_church",
+      "x": 1679.0,
+      "y": 1230.0
+    },
+    {
+      "name": "Gothic Beacon",
+      "biome": "dead_church",
+      "x": 1024.0,
+      "y": 1044.0
+    },
+    {
+      "name": "Hell Beacon",
+      "biome": "risen_hell",
+      "x": 1432.0,
+      "y": 1160.0
+    },
+    {
+      "name": "Hell Beacon",
+      "biome": "risen_hell",
+      "x": 1124.0,
+      "y": 927.0
+    },
+    {
+      "name": "Abandoned Beacon",
+      "biome": "abandoned_city",
+      "x": 1289.0,
+      "y": 1010.0
+    },
+    {
+      "name": "Abyssal Beacon",
+      "biome": "deep_sea_abyss",
+      "x": 395.0,
+      "y": 929.0
+    },
+    {
+      "name": "Abyssal Beacon",
+      "biome": "deep_sea_abyss",
+      "x": 1076.0,
+      "y": 185.0
+    },
+    {
+      "name": "Abyssal Beacon",
+      "biome": "deep_sea_abyss",
+      "x": 1632.0,
+      "y": 342.0
+    },
+    {
+      "name": "Prehistoric Beacon",
+      "biome": "prehistoric",
+      "x": 503.0,
+      "y": 681.0
+    },
+    {
+      "name": "Prehistoric Beacon",
+      "biome": "prehistoric",
+      "x": 1457.0,
+      "y": 860.0
+    },
+    {
+      "name": "Prehistoric Beacon",
+      "biome": "prehistoric",
+      "x": 1051.0,
+      "y": 597.0
+    },
+    {
+      "name": "Floral Beacon",
+      "biome": "floral_escape",
+      "x": 922.0,
+      "y": 791.0
+    },
+    {
+      "name": "Floral Beacon",
+      "biome": "floral_escape",
+      "x": 814.0,
+      "y": 519.0
+    },
+    {
+      "name": "Floral Beacon",
+      "biome": "floral_escape",
+      "x": 1246.0,
+      "y": 539.0
+    },
+    {
+      "name": "Sanguine Beacon",
+      "biome": "sanguine_forest",
+      "x": 1613.0,
+      "y": 717.0
+    },
+    {
+      "name": "Sanguine Beacon",
+      "biome": "sanguine_forest",
+      "x": 966.0,
+      "y": 447.0
+    },
+    {
+      "name": "Sanguine Beacon",
+      "biome": "sanguine_forest",
+      "x": 492.0,
+      "y": 848.0
+    },
+    {
+      "name": "Frozen Beacon",
+      "biome": "runic_tundra",
+      "x": 1134.0,
+      "y": 333.0
+    }
+  ],
+  "metadata": {
+    "map_version": "1.0",
+    "game_bounds": {
+      "minX": 270,
+      "maxX": 2035,
+      "minY": 120,
+      "maxY": 1861
+    },
+    "image_dimensions": {
+      "width": 1801,
+      "height": 1872
+    },
+    "total_beacons": 39,
+    "total_biomes": 20,
+    "source": "User-provided via biome_editor.html on 2025-12-02"
+  }
+}

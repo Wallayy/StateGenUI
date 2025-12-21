@@ -1,0 +1,2506 @@
+{
+  "_metadata": {
+    "description": "Complete biome data: coordinates + enemies + dungeons",
+    "sources": {
+      "coordinates": "User-provided beacon positions via biome_editor.html",
+      "enemies": "Scraped from RealmEye wiki"
+    },
+    "map_bounds": {
+      "min_x": 270,
+      "max_x": 2035,
+      "min_y": 120,
+      "max_y": 1861
+    },
+    "coordinates_calibrated": true,
+    "calibration_date": "2025-12-07",
+    "calibration_formula": {
+      "x": "1.020602 * webmap_x + -24.25",
+      "y": "1.075963 * webmap_y + -52.67"
+    }
+  },
+  "beach": {
+    "name": "Beach",
+    "tier": "Rookie",
+    "beacon_type": "Shores Beacon",
+    "beacon_positions": [
+      [
+        100,
+        100
+      ],
+      [
+        599,
+        1441
+      ],
+      [
+        929,
+        1851
+      ],
+      [
+        685,
+        1755
+      ]
+    ],
+    "aliases": [
+      "shores",
+      "spawn"
+    ],
+    "monsters": [
+      {
+        "name": "Bandit Leader",
+        "wiki_url": "/wiki/bandit-leader",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21775
+      },
+      {
+        "name": "Little Blue Jelly",
+        "wiki_url": "/wiki/little-blue-jelly",
+        "drops_dungeon": "Pirate Cave",
+        "guaranteed": false,
+        "id": 21762
+      },
+      {
+        "name": "Little Green Jelly",
+        "wiki_url": "/wiki/little-green-jelly",
+        "drops_dungeon": "Pirate Cave",
+        "guaranteed": false,
+        "id": 21764
+      },
+      {
+        "name": "Little Pink Jelly",
+        "wiki_url": "/wiki/little-pink-jelly",
+        "drops_dungeon": "Pirate Cave",
+        "guaranteed": false,
+        "id": 21763
+      },
+      {
+        "name": "Pirate",
+        "wiki_url": "/wiki/pirate",
+        "drops_dungeon": "Pirate Cave",
+        "guaranteed": false,
+        "id": 1536
+      },
+      {
+        "name": "Piratess",
+        "wiki_url": "/wiki/piratess",
+        "drops_dungeon": "Pirate Cave",
+        "guaranteed": false,
+        "id": 1537
+      },
+      {
+        "name": "Scorpion Queen",
+        "wiki_url": "/wiki/scorpion-queen",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 1540
+      },
+      {
+        "name": "Snake",
+        "wiki_url": "/wiki/snake",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 1538
+      },
+      {
+        "name": "X Treasure Chest",
+        "wiki_url": "/wiki/x-treasure-chest",
+        "drops_dungeon": "Pirate Cave",
+        "guaranteed": true,
+        "id": 44155
+      },
+      {
+        "name": "Giant Crab",
+        "wiki_url": "/wiki/giant-crab",
+        "drops_dungeon": "Pirate Cave",
+        "guaranteed": false,
+        "id": 21768
+      },
+      {
+        "name": "Sand Devil",
+        "wiki_url": "/wiki/sand-devil",
+        "drops_dungeon": "Pirate Cave",
+        "guaranteed": false,
+        "id": 1735
+      },
+      {
+        "name": "Sandsman King",
+        "wiki_url": "/wiki/sandsman-king",
+        "drops_dungeon": "Forest Maze",
+        "guaranteed": false,
+        "id": 1549
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Beached Buccaneer",
+        "wiki_url": "/wiki/beached-buccaneer",
+        "drops_dungeon": "Pirate Cave",
+        "guaranteed": true,
+        "id": 44158
+      }
+    ],
+    "encounters": [],
+    "beacon_guardian": null,
+    "dungeons": [
+      "Forest Maze",
+      "Pirate Cave"
+    ]
+  },
+  "undead_forest": {
+    "name": "Undead Forest",
+    "tier": "Rookie",
+    "beacon_type": "Gloomy Beacon",
+    "beacon_positions": [
+      [
+        671,
+        1432
+      ]
+    ],
+    "aliases": [
+      "gloomy",
+      "undead"
+    ],
+    "monsters": [
+      {
+        "name": "Goblin Mage",
+        "wiki_url": "/wiki/goblin-mage",
+        "drops_dungeon": "Forest Maze",
+        "guaranteed": false,
+        "id": 21783
+      },
+      {
+        "name": "Skeleton",
+        "wiki_url": "/wiki/skeleton",
+        "drops_dungeon": "Forest Maze",
+        "guaranteed": false,
+        "id": 1626
+      },
+      {
+        "name": "Sumo Master",
+        "wiki_url": "/wiki/sumo-master",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 32512
+      },
+      {
+        "name": "Undead Hobbit Mage",
+        "wiki_url": "/wiki/undead-hobbit-mage",
+        "drops_dungeon": "Forest Maze",
+        "guaranteed": false,
+        "id": 1562
+      }
+    ],
+    "heroes": [],
+    "encounters": [],
+    "beacon_guardian": {
+      "name": "Legion Undead Forest Guard",
+      "wiki_url": "/wiki/legion-undead-forest-guard",
+      "id": 52992
+    },
+    "dungeons": [
+      "Forest Maze"
+    ]
+  },
+  "mid_plains": {
+    "name": "Mid Plains",
+    "tier": "Rookie",
+    "beacon_type": "Plains Beacon",
+    "beacon_positions": [
+      [
+        761,
+        1570
+      ]
+    ],
+    "aliases": [
+      "lime_plains",
+      "plains_mid"
+    ],
+    "monsters": [
+      {
+        "name": "Big Green Slime",
+        "wiki_url": "/wiki/big-green-slime",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21822
+      },
+      {
+        "name": "Earth Golem",
+        "wiki_url": "/wiki/earth-golem",
+        "drops_dungeon": "Forbidden Jungle",
+        "guaranteed": false,
+        "id": 21818
+      },
+      {
+        "name": "Fire Sprite",
+        "wiki_url": "/wiki/fire-sprite",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21811
+      },
+      {
+        "name": "Gray Blob",
+        "wiki_url": "/wiki/gray-blob",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21821
+      },
+      {
+        "name": "Ice Sprite",
+        "wiki_url": "/wiki/ice-sprite",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21812
+      },
+      {
+        "name": "Magic Sprite",
+        "wiki_url": "/wiki/magic-sprite",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21813
+      },
+      {
+        "name": "Orc King",
+        "wiki_url": "/wiki/orc-king",
+        "drops_dungeon": "Spider Den",
+        "guaranteed": false,
+        "id": 1580
+      },
+      {
+        "name": "Paper Golem",
+        "wiki_url": "/wiki/paper-golem",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 1585
+      },
+      {
+        "name": "Pink Blob",
+        "wiki_url": "/wiki/pink-blob",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 517
+      },
+      {
+        "name": "Shambling Sludge",
+        "wiki_url": "/wiki/shambling-sludge",
+        "drops_dungeon": "Spider Den",
+        "guaranteed": false,
+        "id": 2384
+      },
+      {
+        "name": "Swarm",
+        "wiki_url": "/wiki/swarm",
+        "drops_dungeon": "Spider Den",
+        "guaranteed": false,
+        "id": 2389
+      },
+      {
+        "name": "Warrior Bee",
+        "wiki_url": "/wiki/warrior-bee",
+        "drops_dungeon": "The Hive",
+        "guaranteed": true,
+        "id": 2378
+      },
+      {
+        "name": "Wasp Queen",
+        "wiki_url": "/wiki/wasp-queen",
+        "drops_dungeon": "The Hive",
+        "guaranteed": true,
+        "id": 2375
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Deathmage",
+        "wiki_url": "/wiki/deathmage",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21949
+      },
+      {
+        "name": "Lich",
+        "wiki_url": "/wiki/lich",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21936
+      }
+    ],
+    "encounters": [],
+    "beacon_guardian": {
+      "name": "Legion Plains Guard",
+      "wiki_url": "/wiki/legion-plains-guard",
+      "id": 52994
+    },
+    "dungeons": [
+      "Forbidden Jungle",
+      "Spider Den",
+      "The Hive"
+    ]
+  },
+  "nature_ruins": {
+    "name": "Nature Ruins (Mid Forest)",
+    "tier": "Rookie",
+    "beacon_type": "Forest Beacon",
+    "beacon_positions": [
+      [
+        860,
+        1691
+      ]
+    ],
+    "aliases": [
+      "mid_forest",
+      "jungle"
+    ],
+    "monsters": [
+      {
+        "name": "Big Ladybug",
+        "wiki_url": "/wiki/big-ladybug",
+        "drops_dungeon": "Spider Den",
+        "guaranteed": false,
+        "id": 21845
+      },
+      {
+        "name": "Black Bat",
+        "wiki_url": "/wiki/black-bat",
+        "drops_dungeon": "Forbidden Jungle",
+        "guaranteed": false,
+        "id": 21846
+      },
+      {
+        "name": "Clockwork Golem",
+        "wiki_url": "/wiki/clockwork-golem",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21838
+      },
+      {
+        "name": "Dwarf King",
+        "wiki_url": "/wiki/dwarf-king",
+        "drops_dungeon": "Forest Maze",
+        "guaranteed": false,
+        "id": 21836
+      },
+      {
+        "name": "Horned Drake",
+        "wiki_url": "/wiki/horned-drake",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21843
+      },
+      {
+        "name": "Metal Golem",
+        "wiki_url": "/wiki/metal-golem",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21837
+      },
+      {
+        "name": "Werelion",
+        "wiki_url": "/wiki/werelion",
+        "drops_dungeon": "Spider Den",
+        "guaranteed": false,
+        "id": 1591
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Ent Ancient",
+        "wiki_url": "/wiki/ent-ancient",
+        "drops_dungeon": "Magic Woods",
+        "guaranteed": true,
+        "id": 21930
+      },
+      {
+        "name": "Great Coil Snake",
+        "wiki_url": "/wiki/great-coil-snake",
+        "drops_dungeon": "Forbidden Jungle",
+        "guaranteed": true,
+        "id": 21946
+      }
+    ],
+    "encounters": [],
+    "beacon_guardian": {
+      "name": "Legion Forest Guard",
+      "wiki_url": "/wiki/legion-forest-guard",
+      "id": 0
+    },
+    "dungeons": [
+      "Forbidden Jungle",
+      "Forest Maze",
+      "Magic Woods",
+      "Spider Den"
+    ]
+  },
+  "mid_desert": {
+    "name": "Mid Desert",
+    "tier": "Rookie",
+    "beacon_type": "Arid Beacon",
+    "beacon_positions": [
+      [
+        1034,
+        1679
+      ]
+    ],
+    "aliases": [
+      "desert_mid",
+      "oasis"
+    ],
+    "monsters": [
+      {
+        "name": "Darkness Golem",
+        "wiki_url": "/wiki/darkness-golem",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21800
+      },
+      {
+        "name": "Desert Werewolf",
+        "wiki_url": "/wiki/desert-werewolf",
+        "drops_dungeon": "Spider Den",
+        "guaranteed": false,
+        "id": 21798
+      },
+      {
+        "name": "Fire Golem",
+        "wiki_url": "/wiki/fire-golem",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21799
+      },
+      {
+        "name": "Great Lizard",
+        "wiki_url": "/wiki/great-lizard",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21810
+      },
+      {
+        "name": "Nomadic Shaman",
+        "wiki_url": "/wiki/nomadic-shaman",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 1734
+      },
+      {
+        "name": "Sand Phantom",
+        "wiki_url": "/wiki/sand-phantom",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 1733
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Oasis Giant",
+        "wiki_url": "/wiki/oasis-giant",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 1656
+      },
+      {
+        "name": "Phoenix Lord",
+        "wiki_url": "/wiki/phoenix-lord",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 1653
+      }
+    ],
+    "encounters": [],
+    "beacon_guardian": {
+      "name": "Legion Desert Guard",
+      "wiki_url": "/wiki/legion-desert-guard",
+      "id": 52993
+    },
+    "dungeons": [
+      "Spider Den"
+    ]
+  },
+  "high_plains": {
+    "name": "High Plains (Withered)",
+    "tier": "Rookie",
+    "beacon_type": "Plains Beacon",
+    "beacon_positions": [
+      [
+        831,
+        1255
+      ]
+    ],
+    "aliases": [
+      "withered_plains",
+      "plains_high"
+    ],
+    "monsters": [
+      {
+        "name": "Shield Orc King",
+        "wiki_url": "/wiki/shield-orc-king",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 2305
+      },
+      {
+        "name": "Shield Orc Queen",
+        "wiki_url": "/wiki/shield-orc-queen",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 2304
+      },
+      {
+        "name": "Shield Orc Warrior",
+        "wiki_url": "/wiki/shield-orc-warrior",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 2306
+      },
+      {
+        "name": "Undead Dwarf God",
+        "wiki_url": "/wiki/undead-dwarf-god",
+        "drops_dungeon": "Snake Pit",
+        "guaranteed": false,
+        "id": 1600
+      },
+      {
+        "name": "Urgle",
+        "wiki_url": "/wiki/urgle",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 2391
+      }
+    ],
+    "heroes": [],
+    "encounters": [],
+    "beacon_guardian": {
+      "name": "Legion Plains Guard",
+      "wiki_url": "/wiki/legion-plains-guard",
+      "id": 52994
+    },
+    "dungeons": [
+      "Snake Pit"
+    ]
+  },
+  "high_forest": {
+    "name": "High Forest (Dark)",
+    "tier": "Rookie",
+    "beacon_type": "Forest Beacon",
+    "beacon_positions": [
+      [
+        1059,
+        1554
+      ]
+    ],
+    "aliases": [
+      "dark_forest",
+      "forest_high"
+    ],
+    "monsters": [
+      {
+        "name": "Dark Elf Queen",
+        "wiki_url": "/wiki/dark-elf-queen",
+        "drops_dungeon": "Ancient Ruins",
+        "guaranteed": false,
+        "id": 21887
+      },
+      {
+        "name": "Dragon Egg",
+        "wiki_url": "/wiki/dragon-egg",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 518
+      },
+      {
+        "name": "Hunter Centaur",
+        "wiki_url": "/wiki/hunter-centaur",
+        "drops_dungeon": "Ancient Ruins",
+        "guaranteed": false,
+        "id": 21882
+      },
+      {
+        "name": "Lizard God",
+        "wiki_url": "/wiki/lizard-god",
+        "drops_dungeon": "Snake Pit",
+        "guaranteed": false,
+        "id": 21876
+      },
+      {
+        "name": "Ogre King",
+        "wiki_url": "/wiki/ogre-king",
+        "drops_dungeon": "Snake Pit",
+        "guaranteed": false,
+        "id": 1605
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Ghost King",
+        "wiki_url": "/wiki/ghost-king",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21912
+      }
+    ],
+    "encounters": [],
+    "beacon_guardian": {
+      "name": "Legion Forest Guard",
+      "wiki_url": "/wiki/legion-forest-guard",
+      "id": 0
+    },
+    "dungeons": [
+      "Ancient Ruins",
+      "Snake Pit"
+    ]
+  },
+  "high_desert": {
+    "name": "High Desert",
+    "tier": "Rookie",
+    "beacon_type": "Arid Beacon",
+    "beacon_positions": [
+      [
+        1032,
+        1439
+      ]
+    ],
+    "aliases": [
+      "desert_high"
+    ],
+    "monsters": [
+      {
+        "name": "Flamer King",
+        "wiki_url": "/wiki/flamer-king",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21851
+      },
+      {
+        "name": "Flayer God",
+        "wiki_url": "/wiki/flayer-god",
+        "drops_dungeon": "Ancient Ruins",
+        "guaranteed": false,
+        "id": 21850
+      },
+      {
+        "name": "Minotaur",
+        "wiki_url": "/wiki/minotaur",
+        "drops_dungeon": "Ancient Ruins",
+        "guaranteed": false,
+        "id": 21847
+      }
+    ],
+    "heroes": [],
+    "encounters": [],
+    "beacon_guardian": {
+      "name": "Legion Desert Guard",
+      "wiki_url": "/wiki/legion-desert-guard",
+      "id": 52993
+    },
+    "dungeons": [
+      "Ancient Ruins"
+    ]
+  },
+  "coral_reefs": {
+    "name": "Coral Reefs",
+    "tier": "Adept",
+    "beacon_type": "Oceanic Beacon",
+    "beacon_positions": [
+      [
+        1646,
+        1657
+      ],
+      [
+        1992,
+        1254
+      ],
+      [
+        1879,
+        1011
+      ]
+    ],
+    "aliases": [
+      "coral",
+      "reefs",
+      "oceanic"
+    ],
+    "monsters": [
+      {
+        "name": "Enchanted Turtle",
+        "wiki_url": "/wiki/enchanted-turtle",
+        "drops_dungeon": "Cnidarian Reef",
+        "guaranteed": false,
+        "id": 49341
+      },
+      {
+        "name": "Flying Seahorse",
+        "wiki_url": "/wiki/flying-seahorse",
+        "drops_dungeon": "Snake Pit",
+        "guaranteed": false,
+        "id": 49340
+      },
+      {
+        "name": "Leviathan",
+        "wiki_url": "/wiki/leviathan",
+        "drops_dungeon": "Puppet Master's Theatre",
+        "guaranteed": false,
+        "id": 21888
+      },
+      {
+        "name": "Rampant Walrus",
+        "wiki_url": "/wiki/rampant-walrus",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 49344
+      },
+      {
+        "name": "Silvery Narwhal",
+        "wiki_url": "/wiki/silvery-narwhal",
+        "drops_dungeon": "Cave of a Thousand Treasures",
+        "guaranteed": false,
+        "id": 49343
+      },
+      {
+        "name": "Smelly Octopus",
+        "wiki_url": "/wiki/smelly-octopus",
+        "drops_dungeon": "Toxic Sewers",
+        "guaranteed": false,
+        "id": 49342
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Beach Bum",
+        "wiki_url": "/wiki/beach-bum",
+        "drops_dungeon": "Beachzone",
+        "guaranteed": true,
+        "id": 3669
+      },
+      {
+        "name": "Maiden of the Sea",
+        "wiki_url": "/wiki/maiden-of-the-sea",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 34508
+      }
+    ],
+    "encounters": [
+      {
+        "name": "Carp Emperor",
+        "wiki_url": "/wiki/carp-emperor",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 34597
+      },
+      {
+        "name": "Hermit God",
+        "wiki_url": "/wiki/hermit-god",
+        "drops_dungeon": "Ocean Trench",
+        "guaranteed": true,
+        "id": 22023
+      },
+      {
+        "name": "World\u00e2\u20ac\u2122s Oyster",
+        "wiki_url": "/wiki/world-s-oyster",
+        "drops_dungeon": "Cnidarian Reef",
+        "guaranteed": true,
+        "id": 0
+      }
+    ],
+    "beacon_guardian": null,
+    "dungeons": [
+      "Beachzone",
+      "Cave of a Thousand Treasures",
+      "Cnidarian Reef",
+      "Ocean Trench",
+      "Puppet Master's Theatre",
+      "Snake Pit",
+      "Toxic Sewers"
+    ]
+  },
+  "sprite_forest": {
+    "name": "Sprite Forest",
+    "tier": "Adept",
+    "beacon_type": "Fey Beacon",
+    "beacon_positions": [
+      [
+        1343,
+        1529
+      ],
+      [
+        1668,
+        1543
+      ],
+      [
+        1718,
+        1087
+      ]
+    ],
+    "aliases": [
+      "sprite",
+      "fey"
+    ],
+    "monsters": [
+      {
+        "name": "Blazing Sprite",
+        "wiki_url": "/wiki/blazing-sprite",
+        "drops_dungeon": "Abyss of Demons",
+        "guaranteed": false,
+        "id": 17734
+      },
+      {
+        "name": "Corrupt Sprite",
+        "wiki_url": "/wiki/corrupt-sprite",
+        "drops_dungeon": "Puppet Master's Theatre",
+        "guaranteed": false,
+        "id": 17737
+      },
+      {
+        "name": "Evergreen Sprite",
+        "wiki_url": "/wiki/evergreen-sprite",
+        "drops_dungeon": "Magic Woods",
+        "guaranteed": false,
+        "id": 17738
+      },
+      {
+        "name": "Hazardous Sprite",
+        "wiki_url": "/wiki/hazardous-sprite",
+        "drops_dungeon": "Mad Lab",
+        "guaranteed": false,
+        "id": 17736
+      },
+      {
+        "name": "Noxious Sprite",
+        "wiki_url": "/wiki/noxious-sprite",
+        "drops_dungeon": "Toxic Sewers",
+        "guaranteed": false,
+        "id": 17735
+      },
+      {
+        "name": "Sprite Beast",
+        "wiki_url": "/wiki/sprite-beast",
+        "drops_dungeon": "Sprite World",
+        "guaranteed": false,
+        "id": 49967
+      },
+      {
+        "name": "Sprite Child",
+        "wiki_url": "/wiki/sprite-child",
+        "drops_dungeon": "Sprite World",
+        "guaranteed": false,
+        "id": 17733
+      },
+      {
+        "name": "Sprite God",
+        "wiki_url": "/wiki/sprite-god",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 1618
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Artificial Sprite God",
+        "wiki_url": "/wiki/artificial-sprite-god",
+        "drops_dungeon": "Mad Lab",
+        "guaranteed": false,
+        "id": 34570
+      },
+      {
+        "name": "Celestial Sprite",
+        "wiki_url": "/wiki/celestial-sprite",
+        "drops_dungeon": "Sprite World",
+        "guaranteed": true,
+        "id": 44151
+      },
+      {
+        "name": "Cosmic Sprite",
+        "wiki_url": "/wiki/cosmic-sprite",
+        "drops_dungeon": "Sprite World",
+        "guaranteed": true,
+        "id": 44153
+      },
+      {
+        "name": "Elder Sprite Tree",
+        "wiki_url": "/wiki/elder-sprite-tree",
+        "drops_dungeon": "Magic Woods",
+        "guaranteed": false,
+        "id": 2907
+      }
+    ],
+    "encounters": [
+      {
+        "name": "Astral Rift",
+        "wiki_url": "/wiki/astral-rift",
+        "drops_dungeon": "The Third Dimension",
+        "guaranteed": true,
+        "id": 51061
+      },
+      {
+        "name": "Cube God",
+        "wiki_url": "/wiki/cube-god",
+        "drops_dungeon": "The Third Dimension",
+        "guaranteed": true,
+        "id": 22009
+      },
+      {
+        "name": "Daughter of Limon",
+        "wiki_url": "/wiki/daughter-of-limon",
+        "drops_dungeon": "Puppet Master's Encore",
+        "guaranteed": true,
+        "id": 34605
+      }
+    ],
+    "beacon_guardian": {
+      "name": "Legion Fey Guardian",
+      "wiki_url": "/wiki/legion-fey-guardian",
+      "id": 53002
+    },
+    "dungeons": [
+      "Abyss of Demons",
+      "Mad Lab",
+      "Magic Woods",
+      "Puppet Master's Encore",
+      "Puppet Master's Theatre",
+      "Sprite World",
+      "The Third Dimension",
+      "Toxic Sewers"
+    ]
+  },
+  "haunted_hallows": {
+    "name": "Haunted Hallows",
+    "tier": "Adept",
+    "beacon_type": "Haunted Beacon",
+    "beacon_positions": [
+      [
+        1170,
+        1388
+      ],
+      [
+        1531,
+        1366
+      ],
+      [
+        775,
+        1079
+      ]
+    ],
+    "aliases": [
+      "haunted",
+      "hallows",
+      "pumpkin"
+    ],
+    "monsters": [
+      {
+        "name": "Banshee",
+        "wiki_url": "/wiki/banshee",
+        "drops_dungeon": "Mad Lab",
+        "guaranteed": false,
+        "id": 17898
+      },
+      {
+        "name": "Creepy Beholder",
+        "wiki_url": "/wiki/creepy-beholder",
+        "drops_dungeon": "Cursed Library",
+        "guaranteed": false,
+        "id": 17902
+      },
+      {
+        "name": "Ghost God",
+        "wiki_url": "/wiki/ghost-god",
+        "drops_dungeon": "Undead Lair",
+        "guaranteed": false,
+        "id": 21894
+      },
+      {
+        "name": "Headless Horseman",
+        "wiki_url": "/wiki/headless-horseman",
+        "drops_dungeon": "Haunted Cemetery",
+        "guaranteed": true,
+        "id": 21955
+      },
+      {
+        "name": "Pumpkin Brute",
+        "wiki_url": "/wiki/pumpkin-brute",
+        "drops_dungeon": "Magic Woods",
+        "guaranteed": false,
+        "id": 17903
+      },
+      {
+        "name": "Skeleton of the Damned",
+        "wiki_url": "/wiki/skeleton-of-the-damned",
+        "drops_dungeon": "Undead Lair",
+        "guaranteed": false,
+        "id": 17900
+      },
+      {
+        "name": "Werewolf Berserker",
+        "wiki_url": "/wiki/werewolf-berserker",
+        "drops_dungeon": "Snake Pit",
+        "guaranteed": false,
+        "id": 17901
+      },
+      {
+        "name": "Wraith",
+        "wiki_url": "/wiki/wraith",
+        "drops_dungeon": "Puppet Master's Theatre",
+        "guaranteed": false,
+        "id": 17899
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Alpha Werewolf",
+        "wiki_url": "/wiki/alpha-werewolf",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 24012
+      },
+      {
+        "name": "Flesh Golem",
+        "wiki_url": "/wiki/flesh-golem",
+        "drops_dungeon": "Undead Lair",
+        "guaranteed": false,
+        "id": 34515
+      },
+      {
+        "name": "Sinister Scarecrow",
+        "wiki_url": "/wiki/sinister-scarecrow",
+        "drops_dungeon": "Puppet Master's Theatre",
+        "guaranteed": false,
+        "id": 34600
+      }
+    ],
+    "encounters": [
+      {
+        "name": "Possessed Pumpkin",
+        "wiki_url": "/wiki/possessed-pumpkin",
+        "drops_dungeon": "Woodland Labyrinth",
+        "guaranteed": true,
+        "id": 51032
+      },
+      {
+        "name": "Sigma Werewolf",
+        "wiki_url": "/wiki/sigma-werewolf",
+        "drops_dungeon": "The Tavern",
+        "guaranteed": true,
+        "id": 34510
+      },
+      {
+        "name": "Skull Knight",
+        "wiki_url": "/wiki/skull-knight",
+        "drops_dungeon": "Mountain Temple",
+        "guaranteed": true,
+        "id": 34537
+      },
+      {
+        "name": "Skull Shrine",
+        "wiki_url": "/wiki/skull-shrine",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 3414
+      }
+    ],
+    "beacon_guardian": {
+      "name": "Legion Graveyard Guardian",
+      "wiki_url": "/wiki/legion-graveyard-guardian",
+      "id": 52999
+    },
+    "dungeons": [
+      "Cursed Library",
+      "Haunted Cemetery",
+      "Mad Lab",
+      "Magic Woods",
+      "Mountain Temple",
+      "Puppet Master's Theatre",
+      "Snake Pit",
+      "The Tavern",
+      "Undead Lair",
+      "Woodland Labyrinth"
+    ]
+  },
+  "shipwreck_cove": {
+    "name": "Shipwreck Cove",
+    "tier": "Adept",
+    "beacon_type": "Shipwrecked Beacon",
+    "beacon_positions": [
+      [
+        1848,
+        1243
+      ],
+      [
+        1862,
+        1597
+      ],
+      [
+        987,
+        946
+      ]
+    ],
+    "aliases": [
+      "shipwreck",
+      "cove",
+      "pirate"
+    ],
+    "monsters": [
+      {
+        "name": "Drowned Sailor",
+        "wiki_url": "/wiki/drowned-sailor",
+        "drops_dungeon": "Ancient Ruins",
+        "guaranteed": false,
+        "id": 49905
+      },
+      {
+        "name": "Haunted Treasure",
+        "wiki_url": "/wiki/haunted-treasure",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 52432
+      },
+      {
+        "name": "Ocean Spirit",
+        "wiki_url": "/wiki/ocean-spirit",
+        "drops_dungeon": "Magic Woods",
+        "guaranteed": false,
+        "id": 49906
+      },
+      {
+        "name": "Sea Hag",
+        "wiki_url": "/wiki/sea-hag",
+        "drops_dungeon": "Puppet Master's Theatre",
+        "guaranteed": false,
+        "id": 49903
+      },
+      {
+        "name": "Sunken Soul",
+        "wiki_url": "/wiki/sunken-soul",
+        "drops_dungeon": "Cave of a Thousand Treasures",
+        "guaranteed": false,
+        "id": 49901
+      },
+      {
+        "name": "Undead Pirate",
+        "wiki_url": "/wiki/undead-pirate",
+        "drops_dungeon": "Undead Lair",
+        "guaranteed": false,
+        "id": 49902
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Animal Merchant",
+        "wiki_url": "/wiki/animal-merchant",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 24023
+      },
+      {
+        "name": "Washed-Up Captain",
+        "wiki_url": "/wiki/washed-up-captain",
+        "drops_dungeon": "Cave of a Thousand Treasures",
+        "guaranteed": false,
+        "id": 34499
+      }
+    ],
+    "encounters": [
+      {
+        "name": "Beer God",
+        "wiki_url": "/wiki/beer-god",
+        "drops_dungeon": "The Tavern",
+        "guaranteed": true,
+        "id": 22128
+      },
+      {
+        "name": "Bilgewater\u00e2\u20ac\u2122s Galleon",
+        "wiki_url": "/wiki/bilgewater-s-galleon",
+        "drops_dungeon": "Deadwater Docks",
+        "guaranteed": true,
+        "id": 0
+      },
+      {
+        "name": "Crab Sovereign",
+        "wiki_url": "/wiki/crab-sovereign",
+        "drops_dungeon": "Deadwater Docks",
+        "guaranteed": true,
+        "id": 51072
+      },
+      {
+        "name": "Eye of the Storm",
+        "wiki_url": "/wiki/eye-of-the-storm",
+        "drops_dungeon": "Ocean Trench",
+        "guaranteed": true,
+        "id": 51031
+      },
+      {
+        "name": "Ghost Ship",
+        "wiki_url": "/wiki/ghost-ship",
+        "drops_dungeon": "Davy Jones' Locker",
+        "guaranteed": true,
+        "id": 22042
+      }
+    ],
+    "beacon_guardian": {
+      "name": "Legion Cove Guardian",
+      "wiki_url": "/wiki/legion-cove-guardian",
+      "id": 53001
+    },
+    "dungeons": [
+      "Ancient Ruins",
+      "Cave of a Thousand Treasures",
+      "Davy Jones' Locker",
+      "Deadwater Docks",
+      "Magic Woods",
+      "Ocean Trench",
+      "Puppet Master's Theatre",
+      "The Tavern",
+      "Undead Lair"
+    ]
+  },
+  "dead_church": {
+    "name": "Dead Church",
+    "tier": "Adept",
+    "beacon_type": "Gothic Beacon",
+    "beacon_positions": [
+      [
+        1340,
+        1389
+      ],
+      [
+        1687,
+        1270
+      ],
+      [
+        1019,
+        1072
+      ]
+    ],
+    "aliases": [
+      "church",
+      "gothic",
+      "vampire"
+    ],
+    "monsters": [
+      {
+        "name": "Flying Vampire",
+        "wiki_url": "/wiki/flying-vampire",
+        "drops_dungeon": "Manor of the Immortals",
+        "guaranteed": false,
+        "id": 49628
+      },
+      {
+        "name": "Ghastly Nun",
+        "wiki_url": "/wiki/ghastly-nun",
+        "drops_dungeon": "Ancient Ruins",
+        "guaranteed": false,
+        "id": 49630
+      },
+      {
+        "name": "Revenant",
+        "wiki_url": "/wiki/revenant",
+        "drops_dungeon": "Cursed Library",
+        "guaranteed": false,
+        "id": 49416
+      },
+      {
+        "name": "Skeleton Worshipper",
+        "wiki_url": "/wiki/skeleton-worshipper",
+        "drops_dungeon": "Undead Lair",
+        "guaranteed": false,
+        "id": 49627
+      },
+      {
+        "name": "Zombie Cleric",
+        "wiki_url": "/wiki/zombie-cleric",
+        "drops_dungeon": "Snake Pit",
+        "guaranteed": false,
+        "id": 49414
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Death Knight",
+        "wiki_url": "/wiki/death-knight",
+        "drops_dungeon": "Heroic Undead Lair",
+        "guaranteed": false,
+        "id": 44164
+      },
+      {
+        "name": "Kage Kami",
+        "wiki_url": "/wiki/kage-kami",
+        "drops_dungeon": "Manor of the Immortals",
+        "guaranteed": true,
+        "id": 21943
+      },
+      {
+        "name": "Lantern Holder",
+        "wiki_url": "/wiki/lantern-holder",
+        "drops_dungeon": "Haunted Cemetery",
+        "guaranteed": true,
+        "id": 17004
+      },
+      {
+        "name": "Shady Sect Leader",
+        "wiki_url": "/wiki/shady-sect-leader",
+        "drops_dungeon": "Cursed Library",
+        "guaranteed": true,
+        "id": 24015
+      }
+    ],
+    "encounters": [
+      {
+        "name": "Pentaract",
+        "wiki_url": "/wiki/pentaract",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 3423
+      },
+      {
+        "name": "The Lich King",
+        "wiki_url": "/wiki/the-lich-king",
+        "drops_dungeon": "Tomb of the Ancients",
+        "guaranteed": true,
+        "id": 34584
+      },
+      {
+        "name": "The Plague Doctor",
+        "wiki_url": "/wiki/the-plague-doctor",
+        "drops_dungeon": "Sulfurous Wetlands",
+        "guaranteed": true,
+        "id": 34489
+      },
+      {
+        "name": "Well of Souls",
+        "wiki_url": "/wiki/well-of-souls",
+        "drops_dungeon": "Davy Jones' Locker",
+        "guaranteed": true,
+        "id": 34460
+      }
+    ],
+    "beacon_guardian": {
+      "name": "Legion Church Guardian",
+      "wiki_url": "/wiki/legion-church-guardian",
+      "id": 52997
+    },
+    "dungeons": [
+      "Ancient Ruins",
+      "Cursed Library",
+      "Davy Jones' Locker",
+      "Haunted Cemetery",
+      "Heroic Undead Lair",
+      "Manor of the Immortals",
+      "Snake Pit",
+      "Sulfurous Wetlands",
+      "Tomb of the Ancients",
+      "Undead Lair"
+    ]
+  },
+  "risen_hell": {
+    "name": "Risen Hell",
+    "tier": "Adept",
+    "beacon_type": "Hell Beacon",
+    "beacon_positions": [
+      [
+        1425,
+        1198
+      ],
+      [
+        1120,
+        945
+      ]
+    ],
+    "aliases": [
+      "hell",
+      "risen",
+      "lava",
+      "demon"
+    ],
+    "monsters": [
+      {
+        "name": "Brimstone Wyvern",
+        "wiki_url": "/wiki/brimstone-wyvern",
+        "drops_dungeon": "Toxic Sewers",
+        "guaranteed": false,
+        "id": 49900
+      },
+      {
+        "name": "Burning Bones",
+        "wiki_url": "/wiki/burning-bones",
+        "drops_dungeon": "Undead Lair",
+        "guaranteed": false,
+        "id": 49896
+      },
+      {
+        "name": "Cerberus",
+        "wiki_url": "/wiki/cerberus",
+        "drops_dungeon": "Manor of the Immortals",
+        "guaranteed": false,
+        "id": 50130
+      },
+      {
+        "name": "Harrowed Fiend",
+        "wiki_url": "/wiki/harrowed-fiend",
+        "drops_dungeon": "Cursed Library",
+        "guaranteed": false,
+        "id": 49898
+      },
+      {
+        "name": "Raging Ifrit",
+        "wiki_url": "/wiki/raging-ifrit",
+        "drops_dungeon": "Lair of Shaitan",
+        "guaranteed": false,
+        "id": 50131
+      },
+      {
+        "name": "Risen Hellhound",
+        "wiki_url": "/wiki/risen-hellhound",
+        "drops_dungeon": "Abyss of Demons",
+        "guaranteed": false,
+        "id": 49899
+      },
+      {
+        "name": "Tormented Soul",
+        "wiki_url": "/wiki/tormented-soul",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 49897
+      },
+      {
+        "name": "White Demon",
+        "wiki_url": "/wiki/white-demon",
+        "drops_dungeon": "Abyss of Demons",
+        "guaranteed": false,
+        "id": 1617
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Demonic Effigy",
+        "wiki_url": "/wiki/demonic-effigy",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 34551
+      },
+      {
+        "name": "Eternal Tormentor",
+        "wiki_url": "/wiki/eternal-tormentor",
+        "drops_dungeon": "Toxic Sewers",
+        "guaranteed": false,
+        "id": 34573
+      },
+      {
+        "name": "Infernal Ironsmith",
+        "wiki_url": "/wiki/infernal-ironsmith",
+        "drops_dungeon": "Infernal Abyss of Demons",
+        "guaranteed": false,
+        "id": 34476
+      },
+      {
+        "name": "Red Demon",
+        "wiki_url": "/wiki/red-demon",
+        "drops_dungeon": "Abyss of Demons",
+        "guaranteed": false,
+        "id": 1640
+      }
+    ],
+    "encounters": [
+      {
+        "name": "Skull Shrine",
+        "wiki_url": "/wiki/skull-shrine",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 3414
+      }
+    ],
+    "beacon_guardian": {
+      "name": "Legion Hell Guardian",
+      "wiki_url": "/wiki/legion-hell-guardian",
+      "id": 53000
+    },
+    "dungeons": [
+      "Abyss of Demons",
+      "Cursed Library",
+      "Infernal Abyss of Demons",
+      "Lair of Shaitan",
+      "Manor of the Immortals",
+      "Toxic Sewers",
+      "Undead Lair"
+    ]
+  },
+  "abandoned_city": {
+    "name": "Abandoned City",
+    "tier": "Adept",
+    "beacon_type": "Abandoned Beacon",
+    "beacon_positions": [
+      [
+        1291,
+        1034
+      ]
+    ],
+    "aliases": [
+      "city",
+      "abandoned",
+      "center"
+    ],
+    "monsters": [
+      {
+        "name": "Beholder",
+        "wiki_url": "/wiki/beholder",
+        "drops_dungeon": "Cursed Library",
+        "guaranteed": false,
+        "id": 21890
+      },
+      {
+        "name": "Candy Gnome",
+        "wiki_url": "/wiki/candy-gnome",
+        "drops_dungeon": "Candyland Hunting Grounds",
+        "guaranteed": true,
+        "id": 9168
+      },
+      {
+        "name": "Djinn",
+        "wiki_url": "/wiki/djinn",
+        "drops_dungeon": "Cave of a Thousand Treasures",
+        "guaranteed": false,
+        "id": 2330
+      },
+      {
+        "name": "Ent God",
+        "wiki_url": "/wiki/ent-god",
+        "drops_dungeon": "Magic Woods",
+        "guaranteed": false,
+        "id": 1621
+      },
+      {
+        "name": "Flying Brain",
+        "wiki_url": "/wiki/flying-brain",
+        "drops_dungeon": "Mad Lab",
+        "guaranteed": false,
+        "id": 1623
+      },
+      {
+        "name": "Medusa",
+        "wiki_url": "/wiki/medusa",
+        "drops_dungeon": "Snake Pit",
+        "guaranteed": false,
+        "id": 1620
+      },
+      {
+        "name": "Nameless Gladiator",
+        "wiki_url": "/wiki/nameless-gladiator",
+        "drops_dungeon": "Ancient Ruins",
+        "guaranteed": false,
+        "id": 49633
+      },
+      {
+        "name": "Rock Construct",
+        "wiki_url": "/wiki/rock-construct",
+        "drops_dungeon": "The Machine",
+        "guaranteed": false,
+        "id": 2309
+      },
+      {
+        "name": "Slime God",
+        "wiki_url": "/wiki/slime-god",
+        "drops_dungeon": "Toxic Sewers",
+        "guaranteed": false,
+        "id": 1624
+      },
+      {
+        "name": "Steel Construct",
+        "wiki_url": "/wiki/steel-construct",
+        "drops_dungeon": "The Machine",
+        "guaranteed": false,
+        "id": 2311
+      },
+      {
+        "name": "Unsung Jester",
+        "wiki_url": "/wiki/unsung-jester",
+        "drops_dungeon": "Puppet Master's Theatre",
+        "guaranteed": false,
+        "id": 49631
+      },
+      {
+        "name": "Vagabond Satyr",
+        "wiki_url": "/wiki/vagabond-satyr",
+        "drops_dungeon": "Abyss of Demons",
+        "guaranteed": false,
+        "id": 49634
+      },
+      {
+        "name": "Wood Construct",
+        "wiki_url": "/wiki/wood-construct",
+        "drops_dungeon": "The Machine",
+        "guaranteed": false,
+        "id": 2310
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Dragon\u00e2\u20ac\u2122s Treasure",
+        "wiki_url": "/wiki/dragon-s-treasure",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 0
+      },
+      {
+        "name": "Insurgent Rebel Commander",
+        "wiki_url": "/wiki/insurgent-rebel-commander",
+        "drops_dungeon": "Snake Pit",
+        "guaranteed": false,
+        "id": 16995
+      },
+      {
+        "name": "Mysterious Crystal",
+        "wiki_url": "/wiki/mysterious-crystal",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 2471
+      },
+      {
+        "name": "Sword in the Stone?",
+        "wiki_url": "/wiki/sword-in-the-stone",
+        "drops_dungeon": "Ancient Ruins",
+        "guaranteed": false,
+        "id": 34523
+      }
+    ],
+    "encounters": [
+      {
+        "name": "Cube God",
+        "wiki_url": "/wiki/cube-god",
+        "drops_dungeon": "The Third Dimension",
+        "guaranteed": true,
+        "id": 22009
+      },
+      {
+        "name": "Goblin Patriarch",
+        "wiki_url": "/wiki/goblin-patriarch",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 34550
+      },
+      {
+        "name": "Grand Sphinx",
+        "wiki_url": "/wiki/grand-sphinx",
+        "drops_dungeon": "Tomb of the Ancients",
+        "guaranteed": true,
+        "id": 22000
+      },
+      {
+        "name": "Jade and Garnet Statues",
+        "wiki_url": "/wiki/jade-and-garnet-statues",
+        "drops_dungeon": "Mountain Temple",
+        "guaranteed": true,
+        "id": 0
+      },
+      {
+        "name": "Legion General",
+        "wiki_url": "/wiki/legion-general",
+        "drops_dungeon": "Tomb of the Ancients",
+        "guaranteed": true,
+        "id": 24005
+      },
+      {
+        "name": "Maze Minotaur",
+        "wiki_url": "/wiki/maze-minotaur",
+        "drops_dungeon": "Puppet Master's Encore",
+        "guaranteed": true,
+        "id": 34565
+      },
+      {
+        "name": "Rock Dragon",
+        "wiki_url": "/wiki/rock-dragon",
+        "drops_dungeon": "Lair of Draconis",
+        "guaranteed": true,
+        "id": 21983
+      }
+    ],
+    "beacon_guardian": {
+      "name": "Legion City Guardian",
+      "wiki_url": "/wiki/legion-city-guardian",
+      "id": 52995
+    },
+    "dungeons": [
+      "Abyss of Demons",
+      "Ancient Ruins",
+      "Candyland Hunting Grounds",
+      "Cave of a Thousand Treasures",
+      "Cursed Library",
+      "Lair of Draconis",
+      "Mad Lab",
+      "Magic Woods",
+      "Mountain Temple",
+      "Puppet Master's Encore",
+      "Puppet Master's Theatre",
+      "Snake Pit",
+      "The Machine",
+      "The Third Dimension",
+      "Tomb of the Ancients",
+      "Toxic Sewers"
+    ]
+  },
+  "deep_sea_abyss": {
+    "name": "Deep Sea Abyss",
+    "tier": "Veteran",
+    "beacon_type": "Abyssal Beacon",
+    "beacon_positions": [
+      [
+        472,
+        1004
+      ],
+      [
+        1070,
+        149
+      ],
+      [
+        1640,
+        318
+      ]
+    ],
+    "aliases": [
+      "abyss",
+      "deep_sea",
+      "abyssal"
+    ],
+    "monsters": [
+      {
+        "name": "Abyssal Hydra",
+        "wiki_url": "/wiki/abyssal-hydra",
+        "drops_dungeon": "Davy Jones' Locker",
+        "guaranteed": false,
+        "id": 29233
+      },
+      {
+        "name": "Abyssal Kraken",
+        "wiki_url": "/wiki/abyssal-kraken",
+        "drops_dungeon": "Parasite Chambers",
+        "guaranteed": false,
+        "id": 29221
+      },
+      {
+        "name": "Abyssal Siren",
+        "wiki_url": "/wiki/abyssal-siren",
+        "drops_dungeon": "The Third Dimension",
+        "guaranteed": false,
+        "id": 29234
+      },
+      {
+        "name": "Abyssal Squid",
+        "wiki_url": "/wiki/abyssal-squid",
+        "drops_dungeon": "Ocean Trench",
+        "guaranteed": false,
+        "id": 29232
+      },
+      {
+        "name": "Corsair Crab",
+        "wiki_url": "/wiki/corsair-crab",
+        "drops_dungeon": "Deadwater Docks",
+        "guaranteed": false,
+        "id": 21956
+      },
+      {
+        "name": "Hadopelagic Jellyfish",
+        "wiki_url": "/wiki/hadopelagic-jellyfish",
+        "drops_dungeon": "Cnidarian Reef",
+        "guaranteed": false,
+        "id": 29209
+      },
+      {
+        "name": "Hadopelagic Submersible",
+        "wiki_url": "/wiki/hadopelagic-submersible",
+        "drops_dungeon": "High Tech Terror",
+        "guaranteed": false,
+        "id": 31509
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Sea Dragon",
+        "wiki_url": "/wiki/sea-dragon",
+        "drops_dungeon": "Ocean Trench",
+        "guaranteed": false,
+        "id": 1033
+      },
+      {
+        "name": "Sunken Treasure",
+        "wiki_url": "/wiki/sunken-treasure-shipwreck",
+        "drops_dungeon": "Deadwater Docks",
+        "guaranteed": false,
+        "id": 28065
+      }
+    ],
+    "encounters": [
+      {
+        "name": "Adult Baneserpent",
+        "wiki_url": "/wiki/adult-baneserpent",
+        "drops_dungeon": "Fungal Cavern",
+        "guaranteed": true,
+        "id": 34469
+      }
+    ],
+    "beacon_guardian": null,
+    "dungeons": [
+      "Cnidarian Reef",
+      "Davy Jones' Locker",
+      "Deadwater Docks",
+      "Fungal Cavern",
+      "High Tech Terror",
+      "Ocean Trench",
+      "Parasite Chambers",
+      "The Third Dimension"
+    ]
+  },
+  "prehistoric": {
+    "name": "Prehistoric (Carboniferous)",
+    "tier": "Veteran",
+    "beacon_type": "Prehistoric Beacon",
+    "beacon_positions": [
+      [
+        489,
+        682
+      ],
+      [
+        1461,
+        874
+      ],
+      [
+        1047,
+        593
+      ]
+    ],
+    "aliases": [
+      "carboniferous",
+      "swamp",
+      "insect"
+    ],
+    "monsters": [
+      {
+        "name": "Animate Sigillaria",
+        "wiki_url": "/wiki/animate-sigillaria",
+        "drops_dungeon": "Tomb of the Ancients",
+        "guaranteed": false,
+        "id": 30575
+      },
+      {
+        "name": "Colossal Mantis",
+        "wiki_url": "/wiki/colossal-mantis",
+        "drops_dungeon": "Moonlight Village",
+        "guaranteed": false,
+        "id": 9820
+      },
+      {
+        "name": "Grand Dragonfly",
+        "wiki_url": "/wiki/grand-dragonfly",
+        "drops_dungeon": "Sulfurous Wetlands",
+        "guaranteed": false,
+        "id": 17019
+      },
+      {
+        "name": "Hunter Dragonfly",
+        "wiki_url": "/wiki/hunter-dragonfly",
+        "drops_dungeon": "Lair of Draconis",
+        "guaranteed": false,
+        "id": 14714
+      },
+      {
+        "name": "Man-Eating Flytrap",
+        "wiki_url": "/wiki/man-eating-flytrap",
+        "drops_dungeon": "Woodland Labyrinth",
+        "guaranteed": false,
+        "id": 31166
+      },
+      {
+        "name": "Scutosaurus",
+        "wiki_url": "/wiki/scutosaurus",
+        "drops_dungeon": "Secluded Thicket",
+        "guaranteed": false,
+        "id": 9819
+      },
+      {
+        "name": "Spitting Arachnid",
+        "wiki_url": "/wiki/spitting-arachnid",
+        "drops_dungeon": "The Tavern",
+        "guaranteed": false,
+        "id": 30573
+      },
+      {
+        "name": "Sting Spider",
+        "wiki_url": "/wiki/sting-spider",
+        "drops_dungeon": "The Crawling Depths",
+        "guaranteed": false,
+        "id": 50393
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Critter Brood",
+        "wiki_url": "/wiki/critter-brood",
+        "drops_dungeon": "The Crawling Depths",
+        "guaranteed": false,
+        "id": 34481
+      }
+    ],
+    "encounters": [
+      {
+        "name": "Ancient Kaiju",
+        "wiki_url": "/wiki/ancient-kaiju",
+        "drops_dungeon": "Fungal Cavern",
+        "guaranteed": true,
+        "id": 34563
+      },
+      {
+        "name": "Crystal Worm Father",
+        "wiki_url": "/wiki/crystal-worm-father",
+        "drops_dungeon": "Fungal Cavern",
+        "guaranteed": true,
+        "id": 22138
+      },
+      {
+        "name": "Ethereal Shrine",
+        "wiki_url": "/wiki/ethereal-shrine",
+        "drops_dungeon": "Moonlight Village",
+        "guaranteed": true,
+        "id": 22147
+      },
+      {
+        "name": "Flying Behemoth",
+        "wiki_url": "/wiki/flying-behemoth",
+        "drops_dungeon": "The Shatters",
+        "guaranteed": true,
+        "id": 20744
+      }
+    ],
+    "beacon_guardian": {
+      "name": "Legion Colonel",
+      "wiki_url": "/wiki/legion-colonel",
+      "id": 53003
+    },
+    "dungeons": [
+      "Fungal Cavern",
+      "Lair of Draconis",
+      "Moonlight Village",
+      "Secluded Thicket",
+      "Sulfurous Wetlands",
+      "The Crawling Depths",
+      "The Shatters",
+      "The Tavern",
+      "Tomb of the Ancients",
+      "Woodland Labyrinth"
+    ]
+  },
+  "floral_escape": {
+    "name": "Floral Escape",
+    "tier": "Veteran",
+    "beacon_type": "Floral Beacon",
+    "beacon_positions": [
+      [
+        916,
+        804
+      ],
+      [
+        804,
+        507
+      ],
+      [
+        1246,
+        530
+      ]
+    ],
+    "aliases": [
+      "floral",
+      "flower",
+      "bloom"
+    ],
+    "monsters": [
+      {
+        "name": "Great Owl",
+        "wiki_url": "/wiki/great-owl",
+        "drops_dungeon": "Woodland Labyrinth",
+        "guaranteed": false,
+        "id": 21958
+      },
+      {
+        "name": "Green Fingers",
+        "wiki_url": "/wiki/green-fingers",
+        "drops_dungeon": "Sulfurous Wetlands",
+        "guaranteed": false,
+        "id": 9825
+      },
+      {
+        "name": "Overgrown Lily",
+        "wiki_url": "/wiki/overgrown-lily",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 29459
+      },
+      {
+        "name": "Rhinoceros",
+        "wiki_url": "/wiki/rhinoceros",
+        "drops_dungeon": "Secluded Thicket",
+        "guaranteed": false,
+        "id": 9830
+      },
+      {
+        "name": "Snapdragon",
+        "wiki_url": "/wiki/snapdragon",
+        "drops_dungeon": "Lair of Draconis",
+        "guaranteed": false,
+        "id": 9826
+      },
+      {
+        "name": "Spore Spreader",
+        "wiki_url": "/wiki/spore-spreader",
+        "drops_dungeon": "The Crawling Depths",
+        "guaranteed": false,
+        "id": 29458
+      },
+      {
+        "name": "Sunflower Sentinel",
+        "wiki_url": "/wiki/sunflower-sentinel",
+        "drops_dungeon": "Infernal Abyss of Demons",
+        "guaranteed": false,
+        "id": 9828
+      },
+      {
+        "name": "Vegetarian Tiger",
+        "wiki_url": "/wiki/vegetarian-tiger",
+        "drops_dungeon": "Mountain Temple",
+        "guaranteed": false,
+        "id": 9827
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Alluring Blossom",
+        "wiki_url": "/wiki/alluring-blossom",
+        "drops_dungeon": "Moonlight Village",
+        "guaranteed": false,
+        "id": 16999
+      },
+      {
+        "name": "Elder Ent Ancient",
+        "wiki_url": "/wiki/elder-ent-ancient",
+        "drops_dungeon": "Sulfurous Wetlands",
+        "guaranteed": false,
+        "id": 22084
+      },
+      {
+        "name": "Hornet\u00e2\u20ac\u2122s Nest",
+        "wiki_url": "/wiki/hornet-s-nest",
+        "drops_dungeon": "Woodland Labyrinth",
+        "guaranteed": false,
+        "id": 0
+      }
+    ],
+    "encounters": [
+      {
+        "name": "Corrupted Bramblethorn",
+        "wiki_url": "/wiki/corrupted-bramblethorn",
+        "drops_dungeon": "The Nest",
+        "guaranteed": true,
+        "id": 51078
+      },
+      {
+        "name": "Killer Bee Nest",
+        "wiki_url": "/wiki/killer-bee-nest-event-boss",
+        "drops_dungeon": "The Nest",
+        "guaranteed": true,
+        "id": 4284
+      },
+      {
+        "name": "Ethereal Shrine",
+        "wiki_url": "/wiki/ethereal-shrine",
+        "drops_dungeon": "Moonlight Village",
+        "guaranteed": true,
+        "id": 22147
+      },
+      {
+        "name": "Kogbold Expedition Engine",
+        "wiki_url": "/wiki/kogbold-expedition-engine",
+        "drops_dungeon": "Kogbold Steamworks",
+        "guaranteed": true,
+        "id": 21144
+      }
+    ],
+    "beacon_guardian": {
+      "name": "Legion Commissioner",
+      "wiki_url": "/wiki/legion-commissioner",
+      "id": 53009
+    },
+    "dungeons": [
+      "Infernal Abyss of Demons",
+      "Kogbold Steamworks",
+      "Lair of Draconis",
+      "Moonlight Village",
+      "Mountain Temple",
+      "Secluded Thicket",
+      "Sulfurous Wetlands",
+      "The Crawling Depths",
+      "The Nest",
+      "Woodland Labyrinth"
+    ]
+  },
+  "sanguine_forest": {
+    "name": "Sanguine Forest",
+    "tier": "Veteran",
+    "beacon_type": "Sanguine Beacon",
+    "beacon_positions": [
+      [
+        1620,
+        720
+      ],
+      [
+        961,
+        432
+      ],
+      [
+        476,
+        861
+      ]
+    ],
+    "aliases": [
+      "sanguine",
+      "blood",
+      "crimson"
+    ],
+    "monsters": [
+      {
+        "name": "Blood Ooze",
+        "wiki_url": "/wiki/blood-ooze",
+        "drops_dungeon": "Parasite Chambers",
+        "guaranteed": false,
+        "id": 31632
+      },
+      {
+        "name": "Blood Hound",
+        "wiki_url": "/wiki/blood-hound",
+        "drops_dungeon": "The Crawling Depths",
+        "guaranteed": false,
+        "id": 31633
+      },
+      {
+        "name": "Bloodroot Treant",
+        "wiki_url": "/wiki/bloodroot-treant",
+        "drops_dungeon": "Woodland Labyrinth",
+        "guaranteed": false,
+        "id": 31634
+      },
+      {
+        "name": "Bulbous Perforator",
+        "wiki_url": "/wiki/bulbous-perforator",
+        "drops_dungeon": "Sulfurous Wetlands",
+        "guaranteed": false,
+        "id": 9822
+      },
+      {
+        "name": "Ghoul",
+        "wiki_url": "/wiki/ghoul",
+        "drops_dungeon": "Tomb of the Ancients",
+        "guaranteed": false,
+        "id": 31637
+      },
+      {
+        "name": "Ravenous Harpy",
+        "wiki_url": "/wiki/ravenous-harpy",
+        "drops_dungeon": "Lair of Shaitan",
+        "guaranteed": false,
+        "id": 31636
+      },
+      {
+        "name": "Shadow Lurker",
+        "wiki_url": "/wiki/shadow-lurker",
+        "drops_dungeon": "Puppet Master's Encore",
+        "guaranteed": false,
+        "id": 31635
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Organ Harvester",
+        "wiki_url": "/wiki/organ-harvester",
+        "drops_dungeon": "Puppet Master's Encore",
+        "guaranteed": false,
+        "id": 34509
+      },
+      {
+        "name": "Scout Colony",
+        "wiki_url": "/wiki/scout-colony",
+        "drops_dungeon": "Parasite Chambers",
+        "guaranteed": true,
+        "id": 1986
+      }
+    ],
+    "encounters": [
+      {
+        "name": "Avatar of the Forgotten King",
+        "wiki_url": "/wiki/avatar-of-the-forgotten-king",
+        "drops_dungeon": "The Shatters",
+        "guaranteed": true,
+        "id": 29517
+      },
+      {
+        "name": "Bloodroot Heart",
+        "wiki_url": "/wiki/bloodroot-heart",
+        "drops_dungeon": "Lost Halls",
+        "guaranteed": true,
+        "id": 34581
+      },
+      {
+        "name": "Killer Bee Nest",
+        "wiki_url": "/wiki/killer-bee-nest-event-boss",
+        "drops_dungeon": "The Nest",
+        "guaranteed": true,
+        "id": 4284
+      },
+      {
+        "name": "Lost Sentry",
+        "wiki_url": "/wiki/lost-sentry",
+        "drops_dungeon": "Lost Halls",
+        "guaranteed": true,
+        "id": 22146
+      },
+      {
+        "name": "Ravenous Rot",
+        "wiki_url": "/wiki/ravenous-rot",
+        "drops_dungeon": "Lost Halls",
+        "guaranteed": true,
+        "id": 16992
+      },
+      {
+        "name": "Skeletal Centipede",
+        "wiki_url": "/wiki/skeletal-centipede",
+        "drops_dungeon": "Spectral Penitentiary",
+        "guaranteed": true,
+        "id": 34498
+      }
+    ],
+    "beacon_guardian": {
+      "name": "Legion Missionary",
+      "wiki_url": "/wiki/legion-missionary",
+      "id": 53013
+    },
+    "dungeons": [
+      "Lair of Shaitan",
+      "Lost Halls",
+      "Parasite Chambers",
+      "Puppet Master's Encore",
+      "Spectral Penitentiary",
+      "Sulfurous Wetlands",
+      "The Crawling Depths",
+      "The Nest",
+      "The Shatters",
+      "Tomb of the Ancients",
+      "Woodland Labyrinth"
+    ]
+  },
+  "runic_tundra": {
+    "name": "Runic Tundra",
+    "tier": "Veteran",
+    "beacon_type": "Frozen Beacon",
+    "beacon_positions": [
+      [
+        1130,
+        307
+      ]
+    ],
+    "aliases": [
+      "tundra",
+      "frozen",
+      "ice",
+      "snow"
+    ],
+    "monsters": [
+      {
+        "name": "Frost Dragon",
+        "wiki_url": "/wiki/frost-dragon",
+        "drops_dungeon": "Lair of Draconis",
+        "guaranteed": false,
+        "id": 29443
+      },
+      {
+        "name": "Ice Giant",
+        "wiki_url": "/wiki/ice-giant",
+        "drops_dungeon": "Ocean Trench",
+        "guaranteed": false,
+        "id": 29442
+      },
+      {
+        "name": "Runic Golem",
+        "wiki_url": "/wiki/runic-golem",
+        "drops_dungeon": "Mountain Temple",
+        "guaranteed": false,
+        "id": 9831
+      },
+      {
+        "name": "Snow Troll",
+        "wiki_url": "/wiki/snow-troll",
+        "drops_dungeon": "Heroic Undead Lair",
+        "guaranteed": false,
+        "id": 9832
+      },
+      {
+        "name": "Snow Wolf",
+        "wiki_url": "/wiki/snow-wolf",
+        "drops_dungeon": "Deadwater Docks",
+        "guaranteed": false,
+        "id": 9829
+      },
+      {
+        "name": "Snow Yeti",
+        "wiki_url": "/wiki/snow-yeti",
+        "drops_dungeon": "Ice Citadel",
+        "guaranteed": false,
+        "id": 31508
+      },
+      {
+        "name": "Tundra Tribe Leader",
+        "wiki_url": "/wiki/tundra-tribe-leader",
+        "drops_dungeon": "The Third Dimension",
+        "guaranteed": false,
+        "id": 29555
+      },
+      {
+        "name": "Tundra Tribe Fighter",
+        "wiki_url": "/wiki/tundra-tribe-fighter",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 29557
+      },
+      {
+        "name": "Tundra Tribe Shaman",
+        "wiki_url": "/wiki/tundra-tribe-shaman",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 29593
+      }
+    ],
+    "heroes": [
+      {
+        "name": "Assembled Giant",
+        "wiki_url": "/wiki/assembled-giant",
+        "drops_dungeon": "The Third Dimension",
+        "guaranteed": false,
+        "id": 34480
+      },
+      {
+        "name": "Monstrous Grizzly",
+        "wiki_url": "/wiki/monstrous-grizzly",
+        "drops_dungeon": "Ice Citadel",
+        "guaranteed": false,
+        "id": 34518
+      }
+    ],
+    "encounters": [
+      {
+        "name": "Aerial Warship",
+        "wiki_url": "/wiki/aerial-warship",
+        "drops_dungeon": "Kogbold Steamworks",
+        "guaranteed": true,
+        "id": 51075
+      },
+      {
+        "name": "Beer God",
+        "wiki_url": "/wiki/beer-god",
+        "drops_dungeon": "The Tavern",
+        "guaranteed": true,
+        "id": 22128
+      },
+      {
+        "name": "Crystal Worm Father",
+        "wiki_url": "/wiki/crystal-worm-father",
+        "drops_dungeon": "Fungal Cavern",
+        "guaranteed": true,
+        "id": 22138
+      },
+      {
+        "name": "Kogbold Expedition Engine",
+        "wiki_url": "/wiki/kogbold-expedition-engine",
+        "drops_dungeon": "Kogbold Steamworks",
+        "guaranteed": true,
+        "id": 21144
+      },
+      {
+        "name": "Lord of the Lost Lands",
+        "wiki_url": "/wiki/lord-of-the-lost-lands",
+        "drops_dungeon": null,
+        "guaranteed": false,
+        "id": 21996
+      },
+      {
+        "name": "Lost Sentry",
+        "wiki_url": "/wiki/lost-sentry",
+        "drops_dungeon": "Lost Halls",
+        "guaranteed": true,
+        "id": 22146
+      },
+      {
+        "name": "Sentient Monolith",
+        "wiki_url": "/wiki/sentient-monolith",
+        "drops_dungeon": "Fungal Cavern",
+        "guaranteed": true,
+        "id": 16972
+      }
+    ],
+    "beacon_guardian": {
+      "name": "Legion Principal",
+      "wiki_url": "/wiki/legion-principal",
+      "id": 53021
+    },
+    "dungeons": [
+      "Deadwater Docks",
+      "Fungal Cavern",
+      "Heroic Undead Lair",
+      "Ice Citadel",
+      "Kogbold Steamworks",
+      "Lair of Draconis",
+      "Lost Halls",
+      "Mountain Temple",
+      "Ocean Trench",
+      "The Tavern",
+      "The Third Dimension"
+    ]
+  },
+  "low_forest": {
+    "name": "Low Forest",
+    "tier": "Rookie",
+    "beacon_type": "Forest Beacon",
+    "beacon_positions": [],
+    "aliases": [
+      "forest",
+      "low"
+    ],
+    "monsters": [
+      {
+        "name": "Easily Enraged Bunny",
+        "wiki_url": "/wiki/easily-enraged-bunny",
+        "drops_dungeon": "Forest Maze",
+        "guaranteed": false,
+        "id": 21785
+      },
+      {
+        "name": "Elf Wizard",
+        "wiki_url": "/wiki/elf-wizard",
+        "drops_dungeon": "Forest Maze",
+        "guaranteed": false,
+        "id": 21780
+      },
+      {
+        "name": "Hobbit Mage",
+        "wiki_url": "/wiki/hobbit-mage",
+        "drops_dungeon": "Forest Maze",
+        "guaranteed": false,
+        "id": 21790
+      },
+      {
+        "name": "Forest Nymph",
+        "wiki_url": "/wiki/forest-nymph",
+        "drops_dungeon": "Forest Maze",
+        "guaranteed": false,
+        "id": 21787
+      }
+    ],
+    "heroes": [],
+    "encounters": [],
+    "beacon_guardian": {
+      "name": "Legion Forest Guard",
+      "wiki_url": "/wiki/legion-forest-guard",
+      "id": 0
+    },
+    "dungeons": [
+      "Forest Maze"
+    ]
+  }
+}

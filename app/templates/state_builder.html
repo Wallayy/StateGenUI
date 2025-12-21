@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RotMG State Builder - Minimal</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #0f0f0f;
+            color: #d4d4d4;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-weight: 400;
+            font-size: 13px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Ultra minimal header */
+        header {
+            background: #0f0f0f;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1f1f1f;
+        }
+
+        header h1 {
+            font-size: 14px;
+            font-weight: 500;
+            color: #fafafa;
+            letter-spacing: -0.01em;
+        }
+
+        .header-info {
+            display: flex;
+            gap: 24px;
+            font-size: 12px;
+            color: #737373;
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* Clean sidebar */
+        .sidebar-left {
+            width: 340px;
+            background: #0f0f0f;
+            padding: 24px 20px;
+            overflow-y: auto;
+            border-right: 1px solid #1f1f1f;
+        }
+
+        .sidebar-left::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .sidebar-left::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .sidebar-left::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 2px;
+        }
+
+        /* Right sidebar for search/filter tools */
+        .sidebar-right {
+            width: 300px;
+            background: #0f0f0f;
+            padding: 24px 20px;
+            overflow: visible;
+            border-left: 1px solid #1f1f1f;
+        }
+
+        .sidebar-right::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .sidebar-right::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .sidebar-right::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 2px;
+        }
+
+        .map-container {
+            flex: 1;
+            position: relative;
+            background: #0a0a0a;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+            background: #0a0a0a;
+        }
+
+        /* Minimal status */
+        .status-bar {
+            background: #0f0f0f;
+            padding: 10px 24px;
+            font-size: 11px;
+            color: #525252;
+            border-top: 1px solid #1f1f1f;
+        }
+
+        /* Section styling */
+        .section {
+            margin-bottom: 32px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+
+        .section-title {
+            font-size: 11px;
+            font-weight: 500;
+            color: #525252;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .section-collapse {
+            font-size: 10px;
+            color: #404040;
+            transition: transform 0.15s ease;
+        }
+
+        .section-collapse.collapsed {
+            transform: rotate(-90deg);
+        }
+
+        .section-content {
+            transition: all 0.2s ease;
+            overflow: hidden;
+        }
+
+        .section-content.collapsed {
+            max-height: 0 !important;
+            opacity: 0;
+        }
+
+        /* Clean cards */
+        .card {
+            background: #171717;
+            border: 1px solid #262626;
+            border-radius: 6px;
+            padding: 14px;
+            margin-bottom: 10px;
+        }
+
+        .card.empty {
+            background: transparent;
+            border: 1px dashed #262626;
+            color: #525252;
+            font-size: 12px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Biome info */
+        .selected-biome-info {
+            background: #171717;
+            border: 1px solid #3b82f6;
+            border-radius: 6px;
+            padding: 14px;
+            margin-bottom: 16px;
+        }
+
+        .biome-name {
+            font-weight: 500;
+            color: #fafafa;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .biome-tier {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+
+        .biome-tier.rookie {
+            background: #14532d;
+            color: #4ade80;
+        }
+
+        .biome-tier.adept {
+            background: #713f12;
+            color: #fbbf24;
+        }
+
+        .biome-tier.veteran {
+            background: #7f1d1d;
+            color: #f87171;
+        }
+
+        .biome-coords {
+            font-size: 11px;
+            color: #525252;
+            font-family: 'SF Mono', monospace;
+        }
+
+        /* Form inputs */
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            font-weight: 500;
+            color: #525252;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px 12px;
+            background: #171717;
+            border: 1px solid #262626;
+            border-radius: 4px;
+            color: #fafafa;
+            font-size: 13px;
+            font-family: inherit;
+            transition: border-color 0.15s ease;
+        }
+
+        .form-group input::placeholder {
+            color: #404040;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        /* Buttons */
+        .btn {
+            width: 100%;
+            padding: 10px 14px;
+            background: #171717;
+            color: #d4d4d4;
+            border: 1px solid #262626;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            font-family: inherit;
+            transition: all 0.15s ease;
+            margin-bottom: 8px;
+        }
+
+        .btn:hover {
+            background: #262626;
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .btn.primary {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: #fff;
+        }
+
+        .btn.primary:hover {
+            background: #2563eb;
+        }
+
+        .btn.success {
+            background: transparent;
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+
+        .btn.success:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Dungeon list */
+        .dungeon-list {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .dungeon-item {
+            padding: 10px 12px;
+            background: #171717;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            margin-bottom: 4px;
+            transition: all 0.15s ease;
+        }
+
+        .dungeon-item:hover {
+            border-color: #3b82f6;
+        }
+
+        .dungeon-item.selected {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .dungeon-name {
+            color: #d4d4d4;
+        }
+
+        /* Entity search */
+        .entity-search-container {
+            position: relative;
+            overflow: visible;
+        }
+
+        .entity-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #171717;
+            border: 1px solid #262626;
+            border-radius: 4px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 9999;
+            display: none;
+            margin-top: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar-right .section-content {
+            overflow: visible;
+        }
+
+        .entity-results.active {
+            display: block;
+        }
+
+        .entity-result {
+            padding: 10px 12px;
+            cursor: pointer;
+            border-bottom: 1px solid #262626;
+            font-size: 12px;
+        }
+
+        .entity-result:hover {
+            background: #262626;
+        }
+
+        .entity-result:last-child {
+            border-bottom: none;
+        }
+
+        .entity-result .entity-name {
+            color: #d4d4d4;
+        }
+
+        .entity-result .entity-id {
+            color: #3b82f6;
+            float: right;
+            font-family: monospace;
+        }
+
+        .entity-result .entity-type {
+            color: #525252;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Selected entities */
+        .selected-entities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            min-height: 28px;
+        }
+
+        .entity-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
+        .entity-tag .entity-id {
+            font-family: monospace;
+            color: #3b82f6;
+            font-size: 10px;
+        }
+
+        .entity-tag .remove-entity {
+            cursor: pointer;
+            color: #3b82f6;
+            font-weight: 600;
+            opacity: 0.7;
+        }
+
+        .entity-tag .remove-entity:hover {
+            opacity: 1;
+        }
+
+        /* Mode toggles */
+        .mode-toggles {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        .mode-toggle {
+            flex: 1;
+            padding: 8px;
+            background: #171717;
+            border: 1px solid #262626;
+            border-radius: 4px;
+            color: #525252;
+            cursor: pointer;
+            font-size: 11px;
+            text-align: center;
+            transition: all 0.15s ease;
+        }
+
+        .mode-toggle:hover {
+            border-color: #404040;
+        }
+
+        .mode-toggle.active {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+
+        /* Beacon display */
+        .beacon-display {
+            padding: 10px 12px;
+            background: #171717;
+            border: 1px solid #262626;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            margin-bottom: 14px;
+        }
+
+        .beacon-display.empty {
+            color: #404040;
+            border-style: dashed;
+        }
+
+        /* Route points */
+        .route-stats {
+            font-size: 11px;
+            color: #525252;
+            margin-bottom: 10px;
+        }
+
+        .route-points-list {
+            max-height: 140px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        .route-point {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px;
+            background: #171717;
+            border-radius: 4px;
+            font-size: 11px;
+            margin-bottom: 4px;
+        }
+
+        .route-point .point-num {
+            width: 20px;
+            height: 20px;
+            background: #3b82f6;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .route-point .point-coords {
+            flex: 1;
+            font-family: monospace;
+            color: #a3a3a3;
+        }
+
+        .route-point .remove-point {
+            cursor: pointer;
+            color: #525252;
+        }
+
+        .route-point .remove-point:hover {
+            color: #3b82f6;
+        }
+
+        /* Divider */
+        .divider {
+            border: none;
+            border-top: 1px solid #1f1f1f;
+            margin: 24px 0;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: #171717;
+            border: 1px solid #262626;
+            border-radius: 8px;
+            padding: 24px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal h3 {
+            margin-bottom: 16px;
+            color: #fafafa;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .modal pre {
+            background: #0f0f0f;
+            border: 1px solid #262626;
+            padding: 16px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-family: 'SF Mono', monospace;
+            overflow-x: auto;
+            max-height: 400px;
+        }
+
+        .modal-actions {
+            margin-top: 16px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .modal-actions .btn {
+            flex: 1;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #22c55e;
+            color: #000;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            z-index: 10000;
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .toast.error {
+            background: #ef4444;
+            color: #fff;
+        }
+
+        .empty-state {
+            padding: 24px;
+            text-align: center;
+            color: #404040;
+            font-size: 12px;
+        }
+
+        /* Matching biomes list */
+        .matching-biomes-list {
+            margin-top: 10px;
+        }
+
+        .matching-biome-item {
+            padding: 8px 12px;
+            background: #171717;
+            border: 1px solid #262626;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.15s ease;
+        }
+
+        .matching-biome-item:hover {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .matching-biome-item .biome-name {
+            color: #d4d4d4;
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+
+        .matching-biome-item .biome-tier-badge {
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 9px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .matching-biome-item .biome-tier-badge.rookie {
+            background: #14532d;
+            color: #4ade80;
+        }
+
+        .matching-biome-item .biome-tier-badge.adept {
+            background: #713f12;
+            color: #fbbf24;
+        }
+
+        .matching-biome-item .biome-tier-badge.veteran {
+            background: #7f1d1d;
+            color: #f87171;
+        }
+
+        .searched-dungeon-label {
+            font-size: 11px;
+            color: #3b82f6;
+            margin-bottom: 8px;
+            padding: 6px 10px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .searched-dungeon-label .dungeon-name {
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>State Builder</h1>
+            <div class="header-info">
+                <span id="mouse-coords">---, ---</span>
+                <span id="entity-count">Loading...</span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar-left">
+                <!-- Biome -->
+                <div class="section">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <div class="section-title">Biome</div>
+                        <span class="section-collapse">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div id="selected-biome-info" class="card empty">
+                            Click a beacon on the map
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dungeons -->
+                <div id="dungeon-section" class="section" style="display: none;">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <div class="section-title">Dungeons</div>
+                        <span class="section-collapse">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="form-group">
+                            <input type="text" id="dungeon-filter" placeholder="Filter...">
+                        </div>
+                        <div class="dungeon-list" id="dungeon-list"></div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Entities -->
+                <div class="section">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <div class="section-title">Entities</div>
+                        <span class="section-collapse">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="form-group entity-search-container">
+                            <label>Search</label>
+                            <input type="text" id="entity-search" placeholder="Search...">
+                            <div class="entity-results" id="entity-results"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Portal</label>
+                            <div class="selected-entities" id="selected-portal"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Enemies</label>
+                            <div class="selected-entities" id="selected-enemies"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Beacon</label>
+                            <div class="selected-entities" id="selected-beacon"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Route -->
+                <div class="section">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <div class="section-title">Route</div>
+                        <span class="section-collapse">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="mode-toggles">
+                            <div class="mode-toggle" id="mode-patrol" onclick="setMode('patrol')">Points</div>
+                            <div class="mode-toggle" id="mode-beacon" onclick="setMode('beacon')">Beacon</div>
+                            <div class="mode-toggle" id="mode-view" onclick="setMode('view')">View</div>
+                        </div>
+
+                        <div class="beacon-display empty" id="beacon-display">No beacon set</div>
+
+                        <div class="route-stats" id="route-stats">No points</div>
+                        <div class="route-points-list" id="route-points"></div>
+
+                        <button class="btn" id="optimize-btn" disabled onclick="optimizeRoute()">Optimize</button>
+                        <button class="btn" id="clear-btn" disabled onclick="clearRoute()">Clear</button>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Generate -->
+                <div class="section">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <div class="section-title">Generate</div>
+                        <span class="section-collapse">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="state-name" value="my_farmer" placeholder="state_name">
+                        </div>
+
+                        <button class="btn primary" onclick="generateFullState()">Generate JSON</button>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="map-container">
+                <div id="map"></div>
+            </main>
+
+            <aside class="sidebar-right">
+                <!-- Find Dungeon -->
+                <div class="section">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <div class="section-title">Find Dungeon</div>
+                        <span class="section-collapse">&#9660;</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="form-group entity-search-container">
+                            <input type="text" id="dungeon-search" placeholder="Search dungeons...">
+                            <div class="entity-results" id="dungeon-search-results"></div>
+                        </div>
+                        <div id="matching-biomes-list"></div>
+                        <button class="btn" id="reset-dungeon-search-btn" style="display:none;"
+                            onclick="resetDungeonSearch()">Clear</button>
+                    </div>
+                </div>
+
+                <!-- Find Item -->
+                <div class="section">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <div class="section-title">Find Item</div>
+                        <span class="section-collapse">&#9660;</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="form-group entity-search-container">
+                            <input type="text" id="item-search" placeholder="Search white bags...">
+                            <div class="entity-results" id="item-search-results"></div>
+                        </div>
+                        <div id="matching-item-info"></div>
+                        <button class="btn" id="reset-item-search-btn" style="display:none;"
+                            onclick="resetItemSearch()">Clear</button>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Dungeon Phase -->
+                <div id="dungeon-phase-section" class="section" style="display: none;">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <div class="section-title">Dungeon Phase</div>
+                        <span class="section-collapse">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="form-group">
+                            <label>Boss (auto-filled)</label>
+                            <div class="selected-entities" id="dungeon-boss-display"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Additional Enemies</label>
+                            <select id="dungeon-enemy-dropdown" onchange="addDungeonEnemy(this)">
+                                <option value="">Select enemy...</option>
+                            </select>
+                            <div class="selected-entities" id="dungeon-additional-enemies"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Exit Portal</label>
+                            <div id="dungeon-exit-portal-display"><span class="entity-tag">Realm Portal <span
+                                        class="entity-id">1796</span></span></div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="status-bar">
+            <span id="status-message">Loading...</span>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="export-modal" class="modal-overlay">
+        <div class="modal">
+            <h3 id="modal-title">Output</h3>
+            <pre id="export-json"></pre>
+            <div class="modal-actions">
+                <button class="btn" onclick="copyToClipboard()">Copy</button>
+                <button class="btn" onclick="downloadJson()">Download</button>
+                <button class="btn" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="map_config.js"></script>
+    <script>
+        const TIER_COLORS = {
+            'Rookie': '#27ae60',
+            'Adept': '#f39c12',
+            'Veteran': '#e74c3c',
+            'Unknown': '#95a5a6'
+        };
+
+        const state = {
+            map: null,
+            mode: 'view',
+            biomeData: {},
+            biomeBeaconMarkers: [],
+            biomeLabelMarkers: [],
+            showBeacons: true,
+            showLabels: true,
+            dungeons: {},
+            selectedDungeons: [],  // Array of selected dungeon names
+            portalIds: [],         // Array of portal IDs
+            portalNames: [],       // Array of portal names
+            enemyIds: [],
+            enemyNames: [],
+            beaconId: null,
+            beaconName: null,
+            beaconPosition: null,
+            beaconMarker: null,
+            routePoints: [],
+            routeMarkers: [],
+            routePolyline: null,
+            searchTimeout: null,
+            // Dungeon search state
+            searchedDungeon: null,
+            highlightedBiomeIds: [],
+            dungeonSearchTimeout: null,
+            // Item search state
+            lootIndex: null,
+            searchedItem: null,
+            targetEnemyNames: [],
+            itemSearchTimeout: null,
+            // Dungeon phase state
+            dungeonBossId: null,
+            dungeonBossName: null,
+            dungeonAdditionalEnemies: []  // Array of {id, name}
+        };
+
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.section-collapse');
+            content.classList.toggle('collapsed');
+            arrow.classList.toggle('collapsed');
+        }
+
+        async function init() {
+            await loadBiomeData();
+            await loadDungeons();
+            await loadLootIndex();
+            initMap();
+            initEventListeners();
+            updateStatus('Ready');
+        }
+
+        async function loadLootIndex() {
+            try {
+                const response = await fetch('/api/loot-data?v=' + Date.now());
+                const data = await response.json();
+                state.lootIndex = data;
+            } catch (e) {
+                console.error('Failed to load loot index:', e);
+                state.lootIndex = { items: {} };
+            }
+        }
+
+        async function loadBiomeData() {
+            try {
+                const response = await fetch('/api/biomes-complete?v=' + Date.now());
+                const data = await response.json();
+                for (const [key, value] of Object.entries(data)) {
+                    if (!key.startsWith('_')) {
+                        state.biomeData[key] = value;
+                    }
+                }
+            } catch (e) {
+                console.error('Failed to load biome data:', e);
+            }
+        }
+
+        async function loadDungeons() {
+            try {
+                const response = await fetch('/api/dungeons?v=' + Date.now());
+                const data = await response.json();
+                // Handle wrapped {dungeons: ...} or raw {...} for robustness
+                state.dungeons = data.dungeons || data;
+
+                // Initialize entity search check
+                const entityRes = await fetch('/api/entities/search?q=test&limit=1');
+                const entityData = await entityRes.json();
+                if (!entityData.error) {
+                    document.getElementById('entity-count').textContent = 'Ready';
+                }
+            } catch (e) {
+                console.error('Failed to load dungeons:', e);
+            }
+        }
+
+        function clearEntities() {
+            state.portalIds = [];
+            state.portalNames = [];
+            state.enemyIds = [];
+            state.enemyNames = [];
+            state.beaconId = null;
+            state.beaconName = null;
+            state.selectedDungeons = [];
+            renderSelectedEntities('portal');
+            renderSelectedEntities('enemies');
+            renderSelectedEntities('beacon');
+            // Clear dungeon selection highlight
+            document.querySelectorAll('.dungeon-item').forEach(item => item.classList.remove('selected'));
+        }
+
+        function selectBiome(biomeId, beaconPosition) {
+            const biome = state.biomeData[biomeId];
+            if (!biome) return;
+
+            // Clear previous entities when selecting a new biome
+            clearEntities();
+
+            state.selectedBiomeId = biomeId;
+
+            const infoEl = document.getElementById('selected-biome-info');
+            infoEl.className = 'selected-biome-info';
+            infoEl.innerHTML = `
+                <div class="biome-name">${biome.name}<span class="biome-tier ${(biome.tier || 'unknown').toLowerCase()}">${biome.tier || '?'}</span></div>
+                <div class="biome-coords">(${beaconPosition[0]}, ${beaconPosition[1]})</div>
+            `;
+
+            document.getElementById('dungeon-section').style.display = 'block';
+            populateDungeonList(biome.dungeons || []);
+            setBeaconPosition(beaconPosition[0], beaconPosition[1]);
+
+            // Set beacon enemy from biome (used for both dungeon and biome farming)
+            if (biome.beacon_guardian) {
+                state.beaconName = biome.beacon_guardian.name;
+                state.beaconId = biome.beacon_guardian.id || 0;
+            } else {
+                state.beaconName = null;
+                state.beaconId = null;
+            }
+            renderSelectedEntities('beacon');
+
+            state.biomeBeaconMarkers.forEach(marker => {
+                marker.setStyle({
+                    opacity: marker.biomeId === biomeId ? 1 : 0.3,
+                    fillOpacity: marker.biomeId === biomeId ? 0.9 : 0.2
+                });
+            });
+
+            state.biomeLabelMarkers.forEach(label => {
+                label.setOpacity(label.biomeId === biomeId ? 1 : 0.3);
+            });
+
+            updateStatus(`Selected ${biome.name}`);
+        }
+
+        function populateDungeonList(dungeonNames) {
+            const listEl = document.getElementById('dungeon-list');
+            if (dungeonNames.length === 0) {
+                listEl.innerHTML = '<div class="empty-state">No dungeons</div>';
+                return;
+            }
+
+            listEl.innerHTML = dungeonNames.map(name => `
+                <div class="dungeon-item" data-dungeon="${name}" onclick="selectDungeonByName('${name.replace(/'/g, "\\'")}')">
+                    <span class="dungeon-name">${name}</span>
+                </div>
+            `).join('');
+
+            const filterInput = document.getElementById('dungeon-filter');
+            filterInput.value = '';
+            filterInput.oninput = (e) => {
+                const filter = e.target.value.toLowerCase();
+                listEl.querySelectorAll('.dungeon-item').forEach(item => {
+                    item.style.display = item.dataset.dungeon.toLowerCase().includes(filter) ? 'block' : 'none';
+                });
+            };
+        }
+
+        function selectDungeonByName(dungeonName) {
+            const biome = state.biomeData[state.selectedBiomeId];
+            if (!biome) return;
+
+            // Toggle dungeon selection
+            const dungeonIndex = state.selectedDungeons.indexOf(dungeonName);
+            const isSelected = dungeonIndex !== -1;
+
+            if (isSelected) {
+                // Deselect dungeon - remove portal and its enemies
+                state.selectedDungeons.splice(dungeonIndex, 1);
+
+                // Find and remove portal
+                const portalIdx = state.portalNames.indexOf(dungeonName);
+                if (portalIdx !== -1) {
+                    state.portalNames.splice(portalIdx, 1);
+                    state.portalIds.splice(portalIdx, 1);
+                }
+
+                // Remove enemies that drop this dungeon
+                const allEntities = [...(biome.monsters || []), ...(biome.heroes || []), ...(biome.encounters || [])];
+                for (const entity of allEntities) {
+                    if (entity.drops_dungeon === dungeonName) {
+                        const enemyIdx = state.enemyNames.indexOf(entity.name);
+                        if (enemyIdx !== -1) {
+                            state.enemyNames.splice(enemyIdx, 1);
+                            state.enemyIds.splice(enemyIdx, 1);
+                        }
+                    }
+                }
+            } else {
+                // Select dungeon - add portal and its enemies
+                state.selectedDungeons.push(dungeonName);
+
+                // Find portal info
+                let dungeonInfo = null;
+                for (const [key, d] of Object.entries(state.dungeons)) {
+                    if (d.name === dungeonName) {
+                        dungeonInfo = d;
+                        break;
+                    }
+                }
+
+                // Add portal if not already present
+                if (dungeonInfo?.portal_id && !state.portalIds.includes(dungeonInfo.portal_id)) {
+                    state.portalNames.push(dungeonName);
+                    state.portalIds.push(dungeonInfo.portal_id);
+                }
+
+                // Add enemies that drop this dungeon (avoid duplicates)
+                const allEntities = [...(biome.monsters || []), ...(biome.heroes || []), ...(biome.encounters || [])];
+                for (const entity of allEntities) {
+                    if (entity.drops_dungeon === dungeonName && !state.enemyIds.includes(entity.id)) {
+                        state.enemyNames.push(entity.name);
+                        state.enemyIds.push(entity.id || 0);
+                    }
+                }
+            }
+
+            // Update dungeon item visual state
+            document.querySelectorAll('.dungeon-item').forEach(item => {
+                item.classList.toggle('selected', state.selectedDungeons.includes(item.dataset.dungeon));
+            });
+
+            // Beacon is set from biome, don't change it here
+            // (beacon is already set in selectBiome)
+
+            renderSelectedEntities('portal');
+            renderSelectedEntities('enemies');
+
+            // Update dungeon phase UI
+            updateDungeonPhaseUI();
+
+            if (state.selectedDungeons.length > 0) {
+                updateStatus(`${state.selectedDungeons.length} dungeon(s) selected`);
+            } else {
+                updateStatus(`Biome farming mode (no dungeons)`);
+            }
+        }
+
+        function updateDungeonPhaseUI() {
+            const section = document.getElementById('dungeon-phase-section');
+            const bossDisplay = document.getElementById('dungeon-boss-display');
+            const dropdown = document.getElementById('dungeon-enemy-dropdown');
+
+            if (state.selectedDungeons.length === 0) {
+                // No dungeon selected - hide section and clear state
+                section.style.display = 'none';
+                state.dungeonBossId = null;
+                state.dungeonBossName = null;
+                state.dungeonAdditionalEnemies = [];
+                return;
+            }
+
+            // Show the section
+            section.style.display = 'block';
+
+            // Get first selected dungeon data (support 1 dungeon for now)
+            const dungeonName = state.selectedDungeons[0];
+            let dungeonData = null;
+            for (const [key, d] of Object.entries(state.dungeons)) {
+                if (d.name === dungeonName) {
+                    dungeonData = d;
+                    break;
+                }
+            }
+
+            if (!dungeonData) return;
+
+            // Set boss (auto-filled)
+            if (dungeonData.boss && dungeonData.boss.id) {
+                state.dungeonBossId = dungeonData.boss.id;
+                state.dungeonBossName = dungeonData.boss.name;
+                bossDisplay.innerHTML = `<span class="entity-tag">${dungeonData.boss.name} <span class="entity-id">${dungeonData.boss.id}</span><span class="remove-entity" onclick="removeDungeonBoss()">x</span></span>`;
+            } else {
+                state.dungeonBossId = null;
+                state.dungeonBossName = null;
+                bossDisplay.innerHTML = '<span style="color:#404040;font-size:11px;">No boss data</span>';
+            }
+
+            // Populate enemy dropdown (enemies from this dungeon)
+            dropdown.innerHTML = '<option value="">Select enemy...</option>';
+            if (dungeonData.enemies && dungeonData.enemies.length > 0) {
+                dungeonData.enemies.forEach(enemy => {
+                    // Skip if already added
+                    const alreadyAdded = state.dungeonAdditionalEnemies.some(e => e.id === enemy.id);
+                    if (!alreadyAdded && enemy.id) {
+                        const opt = document.createElement('option');
+                        opt.value = JSON.stringify({ id: enemy.id, name: enemy.name });
+                        opt.textContent = `${enemy.name} (${enemy.id})`;
+                        dropdown.appendChild(opt);
+                    }
+                });
+            }
+
+            // Render additional enemies
+            renderDungeonAdditionalEnemies();
+        }
+
+        function addDungeonEnemy(selectEl) {
+            if (!selectEl.value) return;
+            const enemy = JSON.parse(selectEl.value);
+            state.dungeonAdditionalEnemies.push(enemy);
+            selectEl.value = '';
+            updateDungeonPhaseUI();
+        }
+
+        function removeDungeonEnemy(index) {
+            state.dungeonAdditionalEnemies.splice(index, 1);
+            updateDungeonPhaseUI();
+        }
+
+        function removeDungeonBoss() {
+            state.dungeonBossId = null;
+            state.dungeonBossName = null;
+            document.getElementById('dungeon-boss-display').innerHTML = '<span style="color:#404040;font-size:11px;">Boss removed</span>';
+        }
+
+        function renderDungeonAdditionalEnemies() {
+            const el = document.getElementById('dungeon-additional-enemies');
+            if (state.dungeonAdditionalEnemies.length > 0) {
+                el.innerHTML = state.dungeonAdditionalEnemies.map((e, i) =>
+                    `<span class="entity-tag">${e.name} <span class="entity-id">${e.id}</span><span class="remove-entity" onclick="removeDungeonEnemy(${i})">x</span></span>`
+                ).join('');
+            } else {
+                el.innerHTML = '<span style="color:#404040;font-size:11px;">None (boss only)</span>';
+            }
+        }
+
+        function renderSelectedEntities(type) {
+            if (type === 'portal') {
+                const el = document.getElementById('selected-portal');
+                el.innerHTML = state.portalIds.length > 0
+                    ? state.portalNames.map((name, i) => `<span class="entity-tag">${name} <span class="entity-id">${state.portalIds[i]}</span><span class="remove-entity" onclick="removePortal(${i})">x</span></span>`).join('')
+                    : '<span style="color:#404040;font-size:11px;">None (biome farming)</span>';
+            } else if (type === 'enemies') {
+                const el = document.getElementById('selected-enemies');
+                el.innerHTML = state.enemyIds.length > 0
+                    ? state.enemyNames.map((name, i) => `<span class="entity-tag">${name} <span class="entity-id">${state.enemyIds[i]}</span><span class="remove-entity" onclick="removeEnemy(${i})">x</span></span>`).join('')
+                    : '<span style="color:#404040;font-size:11px;">None</span>';
+            } else if (type === 'beacon') {
+                const el = document.getElementById('selected-beacon');
+                el.innerHTML = state.beaconId
+                    ? `<span class="entity-tag">${state.beaconName} <span class="entity-id">${state.beaconId}</span></span>`
+                    : '<span style="color:#404040;font-size:11px;">None</span>';
+            }
+        }
+
+        function removePortal(index) {
+            const portalName = state.portalNames[index];
+            state.portalIds.splice(index, 1);
+            state.portalNames.splice(index, 1);
+            // Also remove from selected dungeons
+            const dungeonIdx = state.selectedDungeons.indexOf(portalName);
+            if (dungeonIdx !== -1) {
+                state.selectedDungeons.splice(dungeonIdx, 1);
+            }
+            // Update dungeon list visual
+            document.querySelectorAll('.dungeon-item').forEach(item => {
+                item.classList.toggle('selected', state.selectedDungeons.includes(item.dataset.dungeon));
+            });
+            renderSelectedEntities('portal');
+        }
+
+        function removeEnemy(index) {
+            state.enemyIds.splice(index, 1);
+            state.enemyNames.splice(index, 1);
+            renderSelectedEntities('enemies');
+        }
+
+        function initEventListeners() {
+            // Dungeon search event listeners
+            const dungeonSearchInput = document.getElementById('dungeon-search');
+            const dungeonResultsDiv = document.getElementById('dungeon-search-results');
+
+            dungeonSearchInput.addEventListener('input', (e) => {
+                clearTimeout(state.dungeonSearchTimeout);
+                const query = e.target.value.trim();
+                if (query.length < 2) {
+                    dungeonResultsDiv.classList.remove('active');
+                    return;
+                }
+
+                state.dungeonSearchTimeout = setTimeout(() => {
+                    const results = searchDungeons(query);
+                    if (results.length > 0) {
+                        dungeonResultsDiv.innerHTML = results.slice(0, 15).map(name => `
+                            <div class="entity-result" onclick="selectDungeonFromSearch('${name.replace(/'/g, "\\'")}')">
+                                <span class="entity-name">${name}</span>
+                            </div>
+                        `).join('');
+                        dungeonResultsDiv.classList.add('active');
+                    } else {
+                        dungeonResultsDiv.innerHTML = '<div class="entity-result" style="color:#404040;">No dungeons found</div>';
+                        dungeonResultsDiv.classList.add('active');
+                    }
+                }, 150);
+            });
+
+            dungeonSearchInput.addEventListener('blur', () => setTimeout(() => dungeonResultsDiv.classList.remove('active'), 200));
+            dungeonSearchInput.addEventListener('focus', () => {
+                if (dungeonSearchInput.value.length >= 2) {
+                    const results = searchDungeons(dungeonSearchInput.value.trim());
+                    if (results.length > 0) {
+                        dungeonResultsDiv.innerHTML = results.slice(0, 15).map(name => `
+                            <div class="entity-result" onclick="selectDungeonFromSearch('${name.replace(/'/g, "\\'")}')">
+                                <span class="entity-name">${name}</span>
+                            </div>
+                        `).join('');
+                        dungeonResultsDiv.classList.add('active');
+                    }
+                }
+            });
+
+            // Item search event listeners
+            const itemSearchInput = document.getElementById('item-search');
+            const itemResultsDiv = document.getElementById('item-search-results');
+
+            itemSearchInput.addEventListener('input', (e) => {
+                clearTimeout(state.itemSearchTimeout);
+                const query = e.target.value.trim();
+                if (query.length < 2) {
+                    itemResultsDiv.classList.remove('active');
+                    return;
+                }
+
+                state.itemSearchTimeout = setTimeout(() => {
+                    const results = searchItems(query);
+                    if (results.length > 0) {
+                        itemResultsDiv.innerHTML = results.map(name => `
+                            <div class="entity-result" onclick="selectItemFromSearch('${name.replace(/'/g, "\\'")}')">
+                                <span class="entity-name">${name}</span>
+                            </div>
+                        `).join('');
+                        itemResultsDiv.classList.add('active');
+                    } else {
+                        itemResultsDiv.innerHTML = '<div class="entity-result" style="color:#404040;">No items found</div>';
+                        itemResultsDiv.classList.add('active');
+                    }
+                }, 150);
+            });
+
+            itemSearchInput.addEventListener('blur', () => setTimeout(() => itemResultsDiv.classList.remove('active'), 200));
+            itemSearchInput.addEventListener('focus', () => {
+                if (itemSearchInput.value.length >= 2) {
+                    const results = searchItems(itemSearchInput.value.trim());
+                    if (results.length > 0) {
+                        itemResultsDiv.innerHTML = results.map(name => `
+                            <div class="entity-result" onclick="selectItemFromSearch('${name.replace(/'/g, "\\'")}')">
+                                <span class="entity-name">${name}</span>
+                            </div>
+                        `).join('');
+                        itemResultsDiv.classList.add('active');
+                    }
+                }
+            });
+
+            // Entity search event listeners
+            const searchInput = document.getElementById('entity-search');
+            const resultsDiv = document.getElementById('entity-results');
+
+            searchInput.addEventListener('input', (e) => {
+                clearTimeout(state.searchTimeout);
+                const query = e.target.value.trim();
+                if (query.length < 2) {
+                    resultsDiv.classList.remove('active');
+                    return;
+                }
+
+                state.searchTimeout = setTimeout(async () => {
+                    try {
+                        const res = await fetch(`/api/entities/search?q=${encodeURIComponent(query)}&limit=15`);
+                        const data = await res.json();
+                        if (data.results && data.results.length > 0) {
+                            resultsDiv.innerHTML = data.results.map(e => `
+                                <div class="entity-result" onclick="selectEntity('${e.name}', ${e.id}, '${e.type}')">
+                                    <span class="entity-name">${e.name}</span>
+                                    <span class="entity-id">${e.id}</span>
+                                    <div class="entity-type">${e.type}</div>
+                                </div>
+                            `).join('');
+                            resultsDiv.classList.add('active');
+                        } else {
+                            resultsDiv.innerHTML = '<div class="entity-result" style="color:#404040;">No results</div>';
+                            resultsDiv.classList.add('active');
+                        }
+                    } catch (err) {
+                        console.error('Search error:', err);
+                    }
+                }, 300);
+            });
+
+            searchInput.addEventListener('blur', () => setTimeout(() => resultsDiv.classList.remove('active'), 200));
+            searchInput.addEventListener('focus', () => { if (searchInput.value.length >= 2) resultsDiv.classList.add('active'); });
+        }
+
+        function selectEntity(name, id, type) {
+            if (type === 'Portal') {
+                // Add to portal list if not already present
+                if (!state.portalIds.includes(id)) {
+                    state.portalIds.push(id);
+                    state.portalNames.push(name);
+                }
+                renderSelectedEntities('portal');
+            } else {
+                const choice = prompt(`Add "${name}" as:\n1 = Enemy\n2 = Beacon\n3 = Portal`);
+                if (choice === '1') {
+                    if (!state.enemyIds.includes(id)) {
+                        state.enemyIds.push(id);
+                        state.enemyNames.push(name);
+                    }
+                    renderSelectedEntities('enemies');
+                }
+                else if (choice === '2') { state.beaconId = id; state.beaconName = name; renderSelectedEntities('beacon'); }
+                else if (choice === '3') {
+                    if (!state.portalIds.includes(id)) {
+                        state.portalIds.push(id);
+                        state.portalNames.push(name);
+                    }
+                    renderSelectedEntities('portal');
+                }
+            }
+            document.getElementById('entity-search').value = '';
+            document.getElementById('entity-results').classList.remove('active');
+        }
+
+        function initMap() {
+            const MAP_OFFSET_X = 257, MAP_OFFSET_Y = -50;
+            const { width, height } = CONFIG.imageDimensions;
+            const bounds = [[MAP_OFFSET_Y, MAP_OFFSET_X], [height + MAP_OFFSET_Y, width + MAP_OFFSET_X]];
+
+            state.map = L.map('map', { crs: L.CRS.Simple, minZoom: -2, maxZoom: 3, zoomSnap: 0.25 });
+            L.imageOverlay(CONFIG.mapImagePath, bounds).addTo(state.map);
+            state.map.fitBounds(bounds);
+            state.map.on('mousemove', onMouseMove);
+            state.map.on('click', onMapClick);
+            renderBiomeBeacons();
+        }
+
+        function gameToPixel(gx, gy) {
+            const { imageDimensions, scaleX, offsetX, scaleY, offsetY } = CONFIG;
+            const { width, height } = imageDimensions;
+            const px = (gx - offsetX) / scaleX;
+            const rawPy = (gy - offsetY) / scaleY;
+            return [height - rawPy, px];
+        }
+
+        function pixelToGame(py, px) {
+            const { imageDimensions, scaleX, offsetX, scaleY, offsetY } = CONFIG;
+            const { height } = imageDimensions;
+            return { x: Math.round(scaleX * px + offsetX), y: Math.round(scaleY * (height - py) + offsetY) };
+        }
+
+        function renderBiomeBeacons() {
+            state.biomeBeaconMarkers.forEach(m => state.map.removeLayer(m));
+            state.biomeLabelMarkers.forEach(m => state.map.removeLayer(m));
+            state.biomeBeaconMarkers = [];
+            state.biomeLabelMarkers = [];
+
+            for (const [biomeId, biome] of Object.entries(state.biomeData)) {
+                const color = TIER_COLORS[biome.tier] || TIER_COLORS['Unknown'];
+                (biome.beacon_positions || []).forEach((pos, idx) => {
+                    const pixelCoords = gameToPixel(pos[0], pos[1]);
+                    if (state.showBeacons) {
+                        const marker = L.circleMarker(pixelCoords, { radius: 8, fillColor: color, color: '#fff', weight: 2, opacity: 1, fillOpacity: 0.8 }).addTo(state.map);
+                        marker.biomeId = biomeId;
+                        marker.bindTooltip(biome.name + ' (' + pos[0] + ', ' + pos[1] + ')', { direction: 'top' });
+                        marker.on('click', () => selectBiome(biomeId, pos));
+                        state.biomeBeaconMarkers.push(marker);
+                    }
+                    if (state.showLabels) {
+                        const label = L.marker(pixelCoords, { interactive: false, icon: L.divIcon({ className: 'biome-label', html: '<div style="color:' + color + ';font-size:11px;font-weight:bold;text-shadow:1px 1px 2px #000;white-space:nowrap;">' + biome.name + '</div>', iconSize: [100, 20], iconAnchor: [50, 10] }) }).addTo(state.map);
+                        label.biomeId = biomeId;
+                        state.biomeLabelMarkers.push(label);
+                    }
+                });
+            }
+        }
+
+        function onMouseMove(e) {
+            const coords = pixelToGame(e.latlng.lat, e.latlng.lng);
+            document.getElementById('mouse-coords').textContent = `${coords.x}, ${coords.y}`;
+        }
+
+        function onMapClick(e) {
+            const coords = pixelToGame(e.latlng.lat, e.latlng.lng);
+            if (state.mode === 'patrol') addRoutePoint(coords.x, coords.y);
+            else if (state.mode === 'beacon') setBeaconPosition(coords.x, coords.y);
+        }
+
+        function setMode(mode) {
+            state.mode = mode;
+            document.querySelectorAll('.mode-toggle').forEach(el => el.classList.remove('active'));
+            document.getElementById(`mode-${mode}`).classList.add('active');
+            document.getElementById('map').style.cursor = mode === 'view' ? 'grab' : 'crosshair';
+        }
+
+        function setBeaconPosition(x, y) {
+            state.beaconPosition = [x, y];
+            const display = document.getElementById('beacon-display');
+            display.textContent = `(${x}, ${y})`;
+            display.classList.remove('empty');
+
+            if (state.beaconMarker) state.map.removeLayer(state.beaconMarker);
+            const pixelCoords = gameToPixel(x, y);
+            state.beaconMarker = L.marker(pixelCoords, {
+                icon: L.divIcon({ className: 'beacon-marker', html: '<div style="background:#3b82f6;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;border:2px solid #fff;">B</div>', iconSize: [28, 28], iconAnchor: [14, 14] }),
+                draggable: true
+            }).addTo(state.map);
+            state.beaconMarker.bindTooltip(`Beacon: (${x}, ${y})`, { direction: 'top' });
+            state.beaconMarker.on('dragend', (e) => { const c = pixelToGame(e.target.getLatLng().lat, e.target.getLatLng().lng); setBeaconPosition(c.x, c.y); });
+        }
+
+        function addRoutePoint(x, y) {
+            state.routePoints.push([x, y]);
+            renderRoute();
+            updateRouteUI();
+        }
+
+        function removeRoutePoint(index) {
+            state.routePoints.splice(index, 1);
+            renderRoute();
+            updateRouteUI();
+        }
+
+        function renderRoute() {
+            if (state.routePolyline) state.map.removeLayer(state.routePolyline);
+            state.routeMarkers.forEach(m => state.map.removeLayer(m));
+            state.routeMarkers = [];
+            if (state.routePoints.length === 0) return;
+
+            const latLngs = state.routePoints.map(pt => gameToPixel(pt[0], pt[1]));
+            if (latLngs.length > 1) latLngs.push(latLngs[0]);
+
+            state.routePolyline = L.polyline(latLngs, { color: '#3b82f6', weight: 2, opacity: 0.7, dashArray: '8, 4' }).addTo(state.map);
+
+            state.routePoints.forEach((pt, idx) => {
+                const marker = L.marker(gameToPixel(pt[0], pt[1]), {
+                    icon: L.divIcon({ className: 'route-marker', html: `<div style="background:#3b82f6;color:#fff;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;border:2px solid #fff;">${idx + 1}</div>`, iconSize: [20, 20], iconAnchor: [10, 10] }),
+                    draggable: true
+                }).addTo(state.map);
+                marker.bindTooltip(`${idx + 1}: (${pt[0]}, ${pt[1]})`, { direction: 'top' });
+                marker.on('dragend', (e) => { const c = pixelToGame(e.target.getLatLng().lat, e.target.getLatLng().lng); state.routePoints[idx] = [c.x, c.y]; renderRoute(); updateRouteUI(); });
+                state.routeMarkers.push(marker);
+            });
+        }
+
+        function updateRouteUI() {
+            const count = state.routePoints.length;
+            let dist = 0;
+            if (count > 1) for (let i = 0; i < count; i++) dist += distance(state.routePoints[i], state.routePoints[(i + 1) % count]);
+            document.getElementById('route-stats').textContent = count > 0 ? `${count} pts, ~${Math.round(dist)} tiles` : 'No points';
+            document.getElementById('route-points').innerHTML = state.routePoints.map((pt, i) => `<div class="route-point"><span class="point-num">${i + 1}</span><span class="point-coords">(${pt[0]}, ${pt[1]})</span><span class="remove-point" onclick="removeRoutePoint(${i})">×</span></div>`).join('');
+            document.getElementById('optimize-btn').disabled = count < 3;
+            document.getElementById('clear-btn').disabled = count < 1;
+        }
+
+        function optimizeRoute() {
+            if (state.routePoints.length < 3) return;
+            state.routePoints = nearestNeighborTSP(state.routePoints);
+            renderRoute();
+            updateRouteUI();
+        }
+
+        function nearestNeighborTSP(points) {
+            if (points.length <= 2) return [...points];
+            const result = [], remaining = [...points];
+            let current = remaining.shift();
+            result.push(current);
+            while (remaining.length > 0) {
+                let minDist = Infinity, nearestIdx = 0;
+                for (let i = 0; i < remaining.length; i++) { const d = distance(current, remaining[i]); if (d < minDist) { minDist = d; nearestIdx = i; } }
+                current = remaining.splice(nearestIdx, 1)[0];
+                result.push(current);
+            }
+            return result;
+        }
+
+        function distance(p1, p2) { return Math.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2); }
+        function clearRoute() { state.routePoints = []; renderRoute(); updateRouteUI(); }
+
+        // ========== Dungeon Search Functions ==========
+
+        function getBiomesForDungeon(dungeonName) {
+            const matchingBiomes = [];
+            for (const [biomeId, biome] of Object.entries(state.biomeData)) {
+                if (biome.dungeons && biome.dungeons.includes(dungeonName)) {
+                    matchingBiomes.push({
+                        id: biomeId,
+                        name: biome.name,
+                        tier: biome.tier || 'Unknown',
+                        beaconPositions: biome.beacon_positions || []
+                    });
+                }
+            }
+            return matchingBiomes;
+        }
+
+        function searchDungeons(query) {
+            if (!query || query.length < 2) return [];
+            const lowerQuery = query.toLowerCase();
+            const results = [];
+            const seen = new Set();
+
+            // Search through all biome dungeons
+            for (const [biomeId, biome] of Object.entries(state.biomeData)) {
+                if (biome.dungeons) {
+                    for (const dungeonName of biome.dungeons) {
+                        if (!seen.has(dungeonName) && dungeonName.toLowerCase().includes(lowerQuery)) {
+                            seen.add(dungeonName);
+                            results.push(dungeonName);
+                        }
+                    }
+                }
+            }
+
+            // Also search in dungeons index
+            for (const [key, dungeon] of Object.entries(state.dungeons)) {
+                if (dungeon.name && !seen.has(dungeon.name) && dungeon.name.toLowerCase().includes(lowerQuery)) {
+                    seen.add(dungeon.name);
+                    results.push(dungeon.name);
+                }
+            }
+
+            return results.sort();
+        }
+
+        function selectDungeonFromSearch(dungeonName) {
+            state.searchedDungeon = dungeonName;
+            const matchingBiomes = getBiomesForDungeon(dungeonName);
+            state.highlightedBiomeIds = matchingBiomes.map(b => b.id);
+
+            // Update UI
+            document.getElementById('dungeon-search').value = '';
+            document.getElementById('dungeon-search-results').classList.remove('active');
+
+            // Show matching biomes
+            renderMatchingBiomesList(dungeonName, matchingBiomes);
+
+            // Highlight biomes on map
+            highlightBiomesForDungeon();
+
+            // Show reset button
+            document.getElementById('reset-dungeon-search-btn').style.display = 'block';
+
+            updateStatus(`Found ${matchingBiomes.length} biome(s) with ${dungeonName}`);
+        }
+
+        function renderMatchingBiomesList(dungeonName, biomes) {
+            const listEl = document.getElementById('matching-biomes-list');
+
+            if (biomes.length === 0) {
+                listEl.innerHTML = '<div class="empty-state">No biomes found for this dungeon</div>';
+                return;
+            }
+
+            let html = `<div class="searched-dungeon-label"><span class="dungeon-name">${dungeonName}</span><span>${biomes.length} biome(s)</span></div>`;
+            html += '<div class="matching-biomes-list">';
+
+            for (const biome of biomes) {
+                const tierClass = (biome.tier || 'unknown').toLowerCase();
+                html += `
+                    <div class="matching-biome-item" onclick="clickMatchingBiome('${biome.id}')">
+                        <span class="biome-name">${biome.name}</span>
+                        <span class="biome-tier-badge ${tierClass}">${biome.tier}</span>
+                    </div>
+                `;
+            }
+
+            html += '</div>';
+            listEl.innerHTML = html;
+        }
+
+        function clickMatchingBiome(biomeId) {
+            const biome = state.biomeData[biomeId];
+            if (!biome || !biome.beacon_positions || biome.beacon_positions.length === 0) return;
+
+            // Use first beacon position
+            const pos = biome.beacon_positions[0];
+            selectBiome(biomeId, pos);
+
+            // If we have a searched dungeon, auto-select it in the dungeon list
+            if (state.searchedDungeon && biome.dungeons && biome.dungeons.includes(state.searchedDungeon)) {
+                setTimeout(() => selectDungeonByName(state.searchedDungeon), 100);
+            }
+
+            // Center map on beacon
+            const pixelCoords = gameToPixel(pos[0], pos[1]);
+            state.map.setView(pixelCoords, 1);
+        }
+
+        function highlightBiomesForDungeon() {
+            if (state.highlightedBiomeIds.length === 0) {
+                // No filter - show all normally
+                state.biomeBeaconMarkers.forEach(marker => {
+                    marker.setStyle({ opacity: 1, fillOpacity: 0.8 });
+                });
+                state.biomeLabelMarkers.forEach(label => {
+                    label.setOpacity(1);
+                });
+                return;
+            }
+
+            // Dim non-matching, highlight matching
+            state.biomeBeaconMarkers.forEach(marker => {
+                const isMatch = state.highlightedBiomeIds.includes(marker.biomeId);
+                marker.setStyle({
+                    opacity: isMatch ? 1 : 0.2,
+                    fillOpacity: isMatch ? 0.9 : 0.1
+                });
+            });
+
+            state.biomeLabelMarkers.forEach(label => {
+                const isMatch = state.highlightedBiomeIds.includes(label.biomeId);
+                label.setOpacity(isMatch ? 1 : 0.2);
+            });
+        }
+
+        function resetDungeonSearch() {
+            state.searchedDungeon = null;
+            state.highlightedBiomeIds = [];
+
+            // Clear UI
+            document.getElementById('dungeon-search').value = '';
+            document.getElementById('dungeon-search-results').classList.remove('active');
+            document.getElementById('matching-biomes-list').innerHTML = '';
+            document.getElementById('reset-dungeon-search-btn').style.display = 'none';
+
+            // Clear entities when resetting search
+            clearEntities();
+
+            // Restore all beacons
+            highlightBiomesForDungeon();
+
+            updateStatus('Search cleared');
+        }
+
+        // ========== End Dungeon Search Functions ==========
+
+        // ========== Item Search Functions ==========
+
+        function searchItems(query) {
+            if (!state.lootIndex?.items || !query || query.length < 2) return [];
+            const lowerQuery = query.toLowerCase();
+            return Object.keys(state.lootIndex.items)
+                .filter(name => name.toLowerCase().includes(lowerQuery))
+                .sort()
+                .slice(0, 15);
+        }
+
+        function selectItemFromSearch(itemName) {
+            const item = state.lootIndex.items[itemName];
+            if (!item) return;
+
+            state.searchedItem = itemName;
+            state.targetEnemyNames = item.enemies || [];
+
+            // Update UI
+            document.getElementById('item-search').value = '';
+            document.getElementById('item-search-results').classList.remove('active');
+
+            // Show item info + biomes
+            renderItemSearchResults(itemName, item);
+
+            // Highlight biomes on map
+            state.highlightedBiomeIds = item.biomes || [];
+            highlightBiomesForDungeon();
+
+            // Show reset button
+            document.getElementById('reset-item-search-btn').style.display = 'block';
+
+            updateStatus(`Found ${item.enemies?.length || 0} enemy(s) dropping ${itemName}`);
+        }
+
+        function renderItemSearchResults(itemName, item) {
+            const el = document.getElementById('matching-item-info');
+
+            let html = `<div class="searched-dungeon-label">
+                <span class="dungeon-name">${itemName}</span>
+            </div>`;
+
+            // Show enemies that drop it
+            if (item.enemies && item.enemies.length > 0) {
+                html += `<div style="font-size:11px;color:#737373;margin:8px 0;">Dropped by: ${item.enemies.join(', ')}</div>`;
+            }
+
+            // Show biomes
+            html += '<div class="matching-biomes-list">';
+            for (const biomeId of item.biomes || []) {
+                const biome = state.biomeData[biomeId];
+                if (!biome) continue;
+                const tierClass = (biome.tier || 'unknown').toLowerCase();
+                html += `<div class="matching-biome-item" onclick="clickItemBiome('${biomeId}')">
+                    <span class="biome-name">${biome.name}</span>
+                    <span class="biome-tier-badge ${tierClass}">${biome.tier || 'Unknown'}</span>
+                </div>`;
+            }
+            html += '</div>';
+
+            el.innerHTML = html;
+        }
+
+        function clickItemBiome(biomeId) {
+            const biome = state.biomeData[biomeId];
+            if (!biome || !biome.beacon_positions || biome.beacon_positions.length === 0) return;
+
+            // Select biome
+            const pos = biome.beacon_positions[0];
+            selectBiome(biomeId, pos);
+
+            // Auto-populate enemy IDs for enemies that drop the item
+            const allEnemies = [...(biome.monsters || []), ...(biome.heroes || []), ...(biome.encounters || [])];
+            const matches = allEnemies.filter(e => state.targetEnemyNames.includes(e.name) && e.id);
+
+            state.enemyIds = matches.map(e => e.id);
+            state.enemyNames = matches.map(e => e.name);
+            renderSelectedEntities('enemies');
+
+            // Center map
+            const pixelCoords = gameToPixel(pos[0], pos[1]);
+            state.map.setView(pixelCoords, 1);
+
+            updateStatus(`Selected ${matches.length} enemy(s) for ${state.searchedItem}`);
+        }
+
+        function resetItemSearch() {
+            state.searchedItem = null;
+            state.targetEnemyNames = [];
+
+            document.getElementById('item-search').value = '';
+            document.getElementById('item-search-results').classList.remove('active');
+            document.getElementById('matching-item-info').innerHTML = '';
+            document.getElementById('reset-item-search-btn').style.display = 'none';
+
+            // Clear entities when resetting search
+            clearEntities();
+
+            state.highlightedBiomeIds = [];
+            highlightBiomesForDungeon();
+
+            updateStatus('Item search cleared');
+        }
+
+        // ========== End Item Search Functions ==========
+
+        function getConfig() {
+            // Dungeon map name (first selected dungeon)
+            const dungeonMapName = state.selectedDungeons.length > 0 ? state.selectedDungeons[0] : null;
+
+            // Realm phase portal
+            const portalId = state.portalIds.length > 0 ? state.portalIds[0] : null;
+
+            // Dungeon additional enemies (extract IDs from objects)
+            const dungeonAdditionalIds = state.dungeonAdditionalEnemies.map(e => e.id);
+
+            return {
+                name: document.getElementById('state-name').value.trim() || 'my_farmer',
+                map_name: "Realm of the Mad God",
+
+                // Beacon
+                beacon_enemy_id: state.beaconId || 0,
+                beacon_position: state.beaconPosition || [0, 0],
+                beacon_distance_threshold: 10.0,
+
+                // Realm Phase
+                clear_enemy_ids: state.enemyIds,
+                portal_id: portalId,
+                portal_ids: state.portalIds,
+                enemy_offset_dist: 3.0,
+                patrol_waypoints: state.routePoints,
+
+                // Dungeon Phase
+                dungeon_map_name: dungeonMapName,
+                dungeon_boss_id: state.dungeonBossId,
+                dungeon_additional_enemies: dungeonAdditionalIds,
+                // dungeon_exit_portal_id is always 1796 (hardcoded in backend)
+
+                // Debug/Meta
+                _portal_names: state.portalNames,
+                _enemy_names: state.enemyNames,
+                _beacon_name: state.beaconName,
+                _selected_dungeons: state.selectedDungeons,
+                _dungeon_boss_name: state.dungeonBossName
+            };
+        }
+
+        async function generateFullState() {
+            const config = getConfig();
+            const errors = [];
+            // Validate: need beacon OR enemies, and patrol points
+            if (config.beacon_enemy_id === 0 && config.clear_enemy_ids.length === 0) {
+                errors.push('No beacon or enemies selected');
+            }
+            if (config.patrol_waypoints.length < 2) errors.push('Need 2+ patrol points');
+            if (errors.length > 0) { alert(errors.join('\n')); return; }
+
+            try {
+                const response = await fetch('/api/generate-state', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(config) });
+                const result = await response.json();
+                if (result.error) { alert(result.error); return; }
+                document.getElementById('modal-title').textContent = `${result.node_count} nodes, ${result.link_count} links`;
+                document.getElementById('export-json').textContent = JSON.stringify(result.state, null, 2);
+                document.getElementById('export-modal').classList.add('active');
+            } catch (err) { alert(err.message); }
+        }
+
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast' + (isError ? ' error' : '');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        function copyToClipboard() {
+            navigator.clipboard.writeText(document.getElementById('export-json').textContent);
+            showToast('Copied to clipboard!');
+        }
+        async function downloadJson() {
+            const content = document.getElementById('export-json').textContent;
+            const filename = (document.getElementById('state-name').value.trim() || 'state') + '.json';
+
+            // Try blob download first (works in browsers)
+            const blob = new Blob([content], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            // Also save to server exports folder as backup
+            try {
+                const res = await fetch('/api/save-state', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ filename, content: JSON.parse(content) })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast(`Saved to: ${data.filename}`);
+                }
+            } catch (e) {
+                showToast('Download initiated');
+            }
+        }
+        function closeModal() { document.getElementById('export-modal').classList.remove('active'); }
+        function updateStatus(msg) { document.getElementById('status-message').textContent = msg; }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+
+</html>
