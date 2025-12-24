@@ -105,6 +105,9 @@ class StateGenHTTPHandler(http.server.SimpleHTTPRequestHandler):
         if parsed_path.path == '/api/dungeons-wiki':
             self.serve_database_file('dungeons_index.json')
             return
+        if parsed_path.path == '/api/biome-whites':
+            self.serve_database_file('biome_whites.json')
+            return
         if parsed_path.path == '/api/loot-data':
             self.serve_database_file('loot_index.json')
             return
