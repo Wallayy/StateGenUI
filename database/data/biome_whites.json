@@ -1,0 +1,100 @@
+[
+    {
+        "item": "Adventurer\u2019s Scarf",
+        "biomes": [
+            "Beach",
+            "Undead Forest",
+            "Low Forest",
+            "Mid Plains",
+            "Mid Forest",
+            "Mid Desert",
+            "High Plains",
+            "High Forest",
+            "High Desert"
+        ]
+    },
+    {
+        "item": "Torrential Staff",
+        "biomes": [
+            "Coral Reefs"
+        ]
+    },
+    {
+        "item": "Celestial Recurve",
+        "biomes": [
+            "Sprite Forest"
+        ]
+    },
+    {
+        "item": "Mace of the Pumpkin Effigy",
+        "biomes": [
+            "Haunted Hallows"
+        ]
+    },
+    {
+        "item": "Pirate\u2019s Artillery",
+        "biomes": [
+            "Shipwreck Cove"
+        ]
+    },
+    {
+        "item": "Skull of Restless Souls",
+        "biomes": [
+            "Dead Church"
+        ]
+    },
+    {
+        "item": "Doom\u2019s Emblem",
+        "biomes": [
+            "Risen Hell"
+        ]
+    },
+    {
+        "item": "Cavalry Lance",
+        "biomes": [
+            "Abandoned City"
+        ]
+    },
+    {
+        "item": "Cloak of the Deep",
+        "biomes": [
+            "Deep Sea Abyss"
+        ]
+    },
+    {
+        "item": "Evolutionary Records",
+        "biomes": [
+            "Carboniferous"
+        ]
+    },
+    {
+        "item": "Pollen Incendiary",
+        "biomes": [
+            "Floral Escape"
+        ]
+    },
+    {
+        "item": "Bloodbath Blade",
+        "biomes": [
+            "Sanguine Forest"
+        ]
+    },
+    {
+        "item": "Runes of Knowledge",
+        "biomes": [
+            "Runic Tundra"
+        ]
+    },
+    {
+        "item": "Incubation Mace",
+        "biomes": [
+            "Relentless Springs"
+        ]
+    },
+    {
+        "item": "Esben\u2019s Twisted Heart",
+        "biomes": [
+            "Eternal Frost"
+        ]
+    }
+]

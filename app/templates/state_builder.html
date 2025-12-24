@@ -961,7 +961,10 @@
             // Dungeon phase state
             dungeonBossId: null,
             dungeonBossName: null,
-            dungeonAdditionalEnemies: []  // Array of {id, name}
+            dungeonAdditionalEnemies: [], // Array of {id, name}
+            // Biome White Bag state
+            biomeWhites: {}, // Map of "Item Name" -> ["Biome1", "Biome2"]
+            isBiomeDrop: false
         };
 
         function toggleSection(header) {
@@ -975,6 +978,7 @@
             await loadBiomeData();
             await loadDungeons();
             await loadLootIndex();
+            await loadBiomeWhites();
             initMap();
             initEventListeners();
             updateStatus('Ready');
@@ -988,6 +992,27 @@
             } catch (e) {
                 console.error('Failed to load loot index:', e);
                 state.lootIndex = { items: {} };
+            }
+        }
+
+        async function loadBiomeWhites() {
+            try {
+                const response = await fetch('/api/biome-whites?v=' + Date.now());
+                const data = await response.json();
+                // Convert list to map for easy lookup
+                state.biomeWhites = {};
+                for (const entry of data) {
+                    // entry = { item: "Name", biomes: ["Biome1"] }
+                    state.biomeWhites[entry.item] = entry.biomes;
+                    // Also add normalized version (smart quotes/mojibake -> standard apostrophe)
+                    // \u2019 is smart quote, \u0092 is windows-1252 mojibake typical in RotMG data
+                    const normalized = entry.item.replace(/[\u2018\u2019\u0091\u0092]/g, "'");
+                    if (normalized !== entry.item) {
+                        state.biomeWhites[normalized] = entry.biomes;
+                    }
+                }
+            } catch (e) {
+                console.error('Failed to load biome whites:', e);
             }
         }
 
@@ -1797,43 +1822,81 @@
 
         function selectItemFromSearch(itemName) {
             const item = state.lootIndex.items[itemName];
-            if (!item) return;
+            // Even if not in lootIndex, it might be in biomeWhites (though our search relies on lootIndex currently)
+            // But let's check biomeWhites first to override behavior if needed
+
+            // Normalize name for lookup
+            const normalizedName = itemName.replace(/[\u2018\u2019\u0091\u0092]/g, "'");
+            const biomeWhiteBiomes = state.biomeWhites[itemName] || state.biomeWhites[normalizedName];
+
+            if (!item && !biomeWhiteBiomes) return;
 
             state.searchedItem = itemName;
-            state.targetEnemyNames = item.enemies || [];
+            state.targetEnemyNames = item ? (item.enemies || []) : [];
+            state.isBiomeDrop = !!biomeWhiteBiomes;
 
             // Update UI
             document.getElementById('item-search').value = '';
             document.getElementById('item-search-results').classList.remove('active');
 
+            // Determine effective biomes
+            // If it's a biome white, use the scraped list. 
+            // Otherwise use lootIndex list.
+            let biomesToHighlight = [];
+            if (state.isBiomeDrop) {
+                // Map names to IDs. Biome Whites uses display names like "Beach", "Undead Forest"
+                // mapping logic needed if IDs differ from Names slightly, but let's try direct or lookup
+                const biomeNameMap = {};
+                for (const [id, b] of Object.entries(state.biomeData)) {
+                    biomeNameMap[b.name.toLowerCase()] = id;
+                    // Also check aliases if needed, but scraped names usually match display names
+                }
+
+                biomesToHighlight = biomeWhiteBiomes.map(name => {
+                    const id = biomeNameMap[name.toLowerCase()];
+                    return id;
+                }).filter(id => id);
+            } else {
+                biomesToHighlight = item.biomes || [];
+            }
+
             // Show item info + biomes
-            renderItemSearchResults(itemName, item);
+            renderItemSearchResults(itemName, item, biomesToHighlight);
 
             // Highlight biomes on map
-            state.highlightedBiomeIds = item.biomes || [];
+            state.highlightedBiomeIds = biomesToHighlight;
             highlightBiomesForDungeon();
 
             // Show reset button
             document.getElementById('reset-item-search-btn').style.display = 'block';
 
-            updateStatus(`Found ${item.enemies?.length || 0} enemy(s) dropping ${itemName}`);
+            if (state.isBiomeDrop) {
+                updateStatus(`Found Biome White: ${itemName} (Drops from ALL enemies in biome)`);
+            } else {
+                updateStatus(`Found ${state.targetEnemyNames.length} enemy(s) dropping ${itemName}`);
+            }
         }
 
-        function renderItemSearchResults(itemName, item) {
+        function renderItemSearchResults(itemName, item, biomes) {
             const el = document.getElementById('matching-item-info');
 
             let html = `<div class="searched-dungeon-label">
                 <span class="dungeon-name">${itemName}</span>
             </div>`;
 
-            // Show enemies that drop it
-            if (item.enemies && item.enemies.length > 0) {
+            // Disclaimer if biome drop
+            if (state.isBiomeDrop) {
+                html += `<div style="font-size:11px;color:#3b82f6;margin:8px 0;font-weight:500;">
+                    <span style="font-size:14px;margin-right:4px;">&#9432;</span> 
+                    Biome Drop: Drops from ALL enemies in these biomes.
+                </div>`;
+            } else if (item && item.enemies && item.enemies.length > 0) {
                 html += `<div style="font-size:11px;color:#737373;margin:8px 0;">Dropped by: ${item.enemies.join(', ')}</div>`;
             }
 
             // Show biomes
             html += '<div class="matching-biomes-list">';
-            for (const biomeId of item.biomes || []) {
+            for (const biomeId of biomes) {
                 const biome = state.biomeData[biomeId];
                 if (!biome) continue;
                 const tierClass = (biome.tier || 'unknown').toLowerCase();
@@ -1855,24 +1918,51 @@
             const pos = biome.beacon_positions[0];
             selectBiome(biomeId, pos);
 
-            // Auto-populate enemy IDs for enemies that drop the item
-            const allEnemies = [...(biome.monsters || []), ...(biome.heroes || []), ...(biome.encounters || [])];
-            const matches = allEnemies.filter(e => state.targetEnemyNames.includes(e.name) && e.id);
+            let matchCount = 0;
 
-            state.enemyIds = matches.map(e => e.id);
-            state.enemyNames = matches.map(e => e.name);
+            if (state.isBiomeDrop) {
+                // Select ALL enemies in this biome
+                const allEnemies = [...(biome.monsters || []), ...(biome.heroes || []), ...(biome.encounters || [])];
+
+                // Add unique only
+                for (const e of allEnemies) {
+                    if (e.id && !state.enemyIds.includes(e.id)) {
+                        state.enemyIds.push(e.id);
+                        state.enemyNames.push(e.name);
+                        matchCount++;
+                    }
+                }
+            } else {
+                // Auto-populate enemy IDs for enemies that drop the item (specific list)
+                const allEnemies = [...(biome.monsters || []), ...(biome.heroes || []), ...(biome.encounters || [])];
+                const matches = allEnemies.filter(e => state.targetEnemyNames.includes(e.name) && e.id);
+
+                for (const e of matches) {
+                    if (!state.enemyIds.includes(e.id)) {
+                        state.enemyIds.push(e.id);
+                        state.enemyNames.push(e.name);
+                        matchCount++;
+                    }
+                }
+            }
+
             renderSelectedEntities('enemies');
 
             // Center map
             const pixelCoords = gameToPixel(pos[0], pos[1]);
             state.map.setView(pixelCoords, 1);
 
-            updateStatus(`Selected ${matches.length} enemy(s) for ${state.searchedItem}`);
+            if (state.isBiomeDrop) {
+                updateStatus(`Selected ALL ${state.enemyIds.length} enemies in ${biome.name}`);
+            } else {
+                updateStatus(`Selected ${matchCount} enemy(s) for ${state.searchedItem}`);
+            }
         }
 
         function resetItemSearch() {
             state.searchedItem = null;
             state.targetEnemyNames = [];
+            state.isBiomeDrop = false;
 
             document.getElementById('item-search').value = '';
             document.getElementById('item-search-results').classList.remove('active');
